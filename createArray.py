@@ -24,9 +24,21 @@ array('d', [1.0, 2.0, 3.0])
 # """
 
 
-# traversal (loop)
-def traverseArray(array):
-    for i in array:
-        print(i)
+# # traversal (loop)
+# def traverseArray(array):
+#     for i in array:
+#         print(i)
 
-traverseArray(arr1)
+# traverseArray(arr1)
+
+
+
+# access
+def accessElement(array, index):
+    if index < 0 or index > len(array) - 1:
+        print(f"index {index} is out of range")
+    else:
+        print(array[index]) 
+
+accessElement(arr1, 100)
+
