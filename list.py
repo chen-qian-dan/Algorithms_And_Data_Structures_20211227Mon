@@ -45,4 +45,12 @@ lst = ['Milk', 'Cheese', 'Butter']
 lst.insert(3, 1) # output: ['Milk', 'Cheese', 'Butter', 1]
 print(lst)
 
+# append
+lst = ['Milk', 'Cheese', 'Butter']
+lst.append('3')
+print(lst)
 
+# extend
+lst = ['Milk', 'Cheese', 'Butter']
+lst.extend([1, 2, 3])
+print(lst)
