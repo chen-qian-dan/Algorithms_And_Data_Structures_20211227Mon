@@ -75,3 +75,16 @@ lst = ['a', 'b', 'c', 'd', 'e']
 a = lst.pop(0)  # delete the first one
 print(a)
 print(lst)
+
+lst = ['a', 'b', 'c', 'd', 'e']
+# a = lst.pop(0:3)  # no such thing
+
+
+# delete
+lst = ['a', 'b', 'c', 'd', 'e']
+del lst[2]
+print(lst)
+
+lst = ['a', 'b', 'c', 'd', 'e']
+del lst[0:2] # compare with pop, del return nothing
+print(lst)
