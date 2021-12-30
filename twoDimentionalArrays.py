@@ -42,3 +42,18 @@ twoDArray = np.array([[11, 15, 10, 6], [10, 14, 11, 5], [12, 17, 12, 8], [15, 18
 for i in range(len(twoDArray)):
     for j in range(len(twoDArray[0])):
         print(twoDArray[i][j])
+
+
+# search
+twoDArray = np.array([[11, 15, 10, 6], [10, 14, 11, 5], [12, 17, 12, 8], [15, 18, 14, 9]])
+
+def searchTwoDArray(twoDArray, target):
+
+    for i in range(len(twoDArray)):
+        for j in range(len(twoDArray[0])):
+            if twoDArray[i][j] == target:
+                return True
+    return False
+
+
+print(searchTwoDArray(twoDArray, 3))
