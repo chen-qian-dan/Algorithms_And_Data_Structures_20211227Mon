@@ -24,3 +24,12 @@ print('milk' in lst) # case sensitive
 a = lst[0].lower()
 print(a)
 
+# traverse
+for v in lst:
+    print(v)
+
+for i in range(len(lst)):
+    print(lst[i])
+
+for i, v in enumerate(lst):
+    print(v)
