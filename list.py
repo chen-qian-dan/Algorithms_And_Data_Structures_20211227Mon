@@ -54,3 +54,13 @@ print(lst)
 lst = ['Milk', 'Cheese', 'Butter']
 lst.extend([1, 2, 3])
 print(lst)
+
+# slice
+lst = ['a', 'b', 'c', 'd', 'e']
+print(lst[:2])
+print(lst[2:])
+print(lst[2:3]) # note: not the same as lst[2], lst[2] is an item, lst[2:3] is a list
+print(lst[-1])
+print(lst[:])
+print(lst[:-2]) # the last 2 is the first not want
+
