@@ -33,3 +33,16 @@ for i in range(len(lst)):
 
 for i, v in enumerate(lst):
     print(v)
+
+
+# update 
+lst = ['Milk', 'Cheese', 'Butter']
+lst[0] = 'Egg'
+print(lst)
+
+# insert
+lst = ['Milk', 'Cheese', 'Butter']
+lst.insert(3, 1) # output: ['Milk', 'Cheese', 'Butter', 1]
+print(lst)
+
+
