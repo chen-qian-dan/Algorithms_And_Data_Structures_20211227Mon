@@ -88,3 +88,9 @@ print(lst)
 lst = ['a', 'b', 'c', 'd', 'e']
 del lst[0:2] # compare with pop, del return nothing
 print(lst)
+
+
+# remove
+lst = ['a', 'b', 'c', 'd', 'e', 'e']
+lst.remove('e') # only remove one 'e'
+print(lst)
