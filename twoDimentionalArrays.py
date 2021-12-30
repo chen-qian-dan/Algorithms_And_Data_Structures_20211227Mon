@@ -57,3 +57,14 @@ def searchTwoDArray(twoDArray, target):
 
 
 print(searchTwoDArray(twoDArray, 3))
+
+
+# delete
+import numpy as np
+twoDArray = np.array([[11, 15, 10, 6], [10, 14, 11, 5], [12, 17, 12, 8], [15, 18, 14, 9]])
+
+newTDArray = np.delete(twoDArray, 0, axis = 0) # delete row
+print(newTDArray)
+
+newTDArray = np.delete(twoDArray, 0, axis = 1) # delete column
+print(newTDArray)
