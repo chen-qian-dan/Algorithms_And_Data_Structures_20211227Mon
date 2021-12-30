@@ -33,12 +33,21 @@ array('d', [1.0, 2.0, 3.0])
 
 
 
-# access
-def accessElement(array, index):
-    if index < 0 or index > len(array) - 1:
-        print(f"index {index} is out of range")
-    else:
-        print(array[index]) 
+# # access
+# def accessElement(array, index):
+#     if index < 0 or index > len(array) - 1:
+#         print(f"index {index} is out of range")
+#     else:
+#         print(array[index]) 
 
-accessElement(arr1, 100)
+# accessElement(arr1, 100)
 
+
+# search
+def searchInArray(array, target):
+    for i, v in enumerate(array):
+        if v == target:
+            return i
+    return "The target does not exist"
+
+print(searchInArray(arr1, 6))
