@@ -20,3 +20,16 @@ print(twoDArray)
 # append
 newTwoDArray = np.append(twoDArray, [[1, 2, 3]], axis= 0)
 print(newTwoDArray)
+
+
+# access
+twoDArray = np.array([[11, 15, 10, 6], [10, 14, 11, 5], [12, 17, 12, 8], [15, 18, 14, 9]])
+
+def accessElements(array, rowIndex, columnIndex):
+    if rowIndex < 0 or rowIndex > len(array) - 1 or columnIndex < 0 or columnIndex > len(array[0]) - 1:
+        print('Incorrect index')
+
+    else:
+        print(array[rowIndex][columnIndex])
+
+accessElements(twoDArray, 0, 0)
