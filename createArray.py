@@ -4,7 +4,7 @@ arr1 = array('i', [1, 2, 3, 4, 5, 6])
 arr2 = array('d', [1, 2, 3])
 
 print(arr1)
-print(arr2)
+# print(arr2)
 
 """
 output:
@@ -43,11 +43,17 @@ array('d', [1.0, 2.0, 3.0])
 # accessElement(arr1, 100)
 
 
-# search
-def searchInArray(array, target):
-    for i, v in enumerate(array):
-        if v == target:
-            return i
-    return "The target does not exist"
+# # search
+# def searchInArray(array, target):
+#     for i, v in enumerate(array):
+#         if v == target:
+#             return i
+#     return "The target does not exist"
 
-print(searchInArray(arr1, 6))
+# print(searchInArray(arr1, 6))
+
+
+# delete
+arr1.remove(6) # shit to LHS
+print(arr1)
+arr1.remove('not exist') # ValueError
