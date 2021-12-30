@@ -64,3 +64,14 @@ print(lst[-1])
 print(lst[:])
 print(lst[:-2]) # the last 2 is the first not want
 
+
+# pop
+lst = ['a', 'b', 'c', 'd', 'e']
+a = lst.pop()  # delete the last one
+print(a)
+print(lst)
+
+lst = ['a', 'b', 'c', 'd', 'e']
+a = lst.pop(0)  # delete the first one
+print(a)
+print(lst)
