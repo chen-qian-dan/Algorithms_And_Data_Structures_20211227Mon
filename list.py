@@ -94,3 +94,17 @@ print(lst)
 lst = ['a', 'b', 'c', 'd', 'e', 'e']
 lst.remove('e') # only remove one 'e'
 print(lst)
+
+# search
+if 20 in lst:
+    print('True')
+else:
+    print('False')
+
+def searchInList(lst, target):
+    for i, v in enumerate(lst):
+        if v == target:
+            return i
+    return 'Target is no in the list'
+
+print(searchInList(lst, 'a'))
