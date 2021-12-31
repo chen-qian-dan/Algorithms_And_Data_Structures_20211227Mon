@@ -136,3 +136,7 @@ random.shuffle(mylist)
 print(mylist)
 
 
+# [::2]
+a=[1,2,3,4,5,6,7,8,9]
+a[::2]=10,20,30,40,50
+print(a)
