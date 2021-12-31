@@ -12,3 +12,6 @@ print(b)
 a: str = 'spam-spam1-spam2'
 b: List[str] = a.split('-')
 print(b)
+
+
+print('_'.join(b))
