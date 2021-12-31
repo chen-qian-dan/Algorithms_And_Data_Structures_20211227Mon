@@ -128,3 +128,11 @@ print(sum(a))
 # print(sum(a, b)) # no such thing
 
 
+import random
+
+mylist = ["apple", "banana", "cherry"]
+random.shuffle(mylist)
+
+print(mylist)
+
+
