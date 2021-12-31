@@ -140,3 +140,43 @@ print(mylist)
 a=[1,2,3,4,5,6,7,8,9]
 a[::2]=10,20,30,40,50
 print(a)
+
+# ------------------------------
+a=[1,2,3,4,5]
+print(a[3:0:-1]) # output: [4, 3, 2]
+
+
+
+
+# ------------------------------
+fruit_list1 = ['Apple', 'Berry', 'Cherry', 'Papaya']
+fruit_list2 = fruit_list1 # by ref
+fruit_list3 = fruit_list1[:] # by value
+ 
+fruit_list2[0] = 'Guava'
+fruit_list3[1] = 'Kiwi'
+
+for ls in (fruit_list1, fruit_list2, fruit_list3):
+    print(ls)
+
+
+for a in (1, 2, 3):
+    print(a)
+
+
+
+# ------------------------------
+def f(i, values = []):
+    values.append(i)
+    print (values)
+    return values
+f(1)
+f(2)
+f(3)
+"""
+output:
+[1]
+[1, 2]
+[1, 2, 3]
+"""
+
