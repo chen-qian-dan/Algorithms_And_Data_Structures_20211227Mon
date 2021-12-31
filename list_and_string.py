@@ -24,8 +24,24 @@ print(lst)
 lst.sort(reverse = True)
 print(lst)
 
+print('sorted')
 lst: List[int] = [2, 4, 3, 1, 5, 7]
 newlst = sorted(lst)
 print(newlst)
 newlst = sorted(lst, reverse=True)
 print(newlst)
+
+
+# reverse
+print('reverse')
+lst: List[int] = [2, 4, 3, 1, 5, 7]
+lst.reverse()
+print(lst)
+print('reversed()')
+lst: List[int] = [2, 4, 3, 1, 5, 7]
+newlst = reversed(lst) # return an iterator obj
+print(lst)
+print(newlst)
+
+lst: List[int] = [2, 4, 3, 1, 5, 7]
+print(lst[::-1])
