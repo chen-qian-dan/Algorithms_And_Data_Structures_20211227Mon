@@ -12,3 +12,8 @@ from typing import List
 def findMissingNumber(lst: List[int], nMin: int, nMax: int) -> int:
     nMissngNumber: int = int((nMin + nMax) * nMax / 2) - sum(lst)
     return nMissngNumber
+
+
+
+lst: List[int] = [1, 2, 4, 5]
+print(findMissingNumber(lst, nMin = 1, nMax = 5))
