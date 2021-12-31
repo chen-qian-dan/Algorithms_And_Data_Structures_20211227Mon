@@ -16,7 +16,7 @@ def calculate_average_temperature():
     for nDay in range(nDayCount):
         fTempLst.append(float(input(f"Day {nDay + 1}'s high temp: ")))
     
-    fAverage: float = sum(fTempLst) / nDayCount
+    fAverage: float = round(sum(fTempLst) / nDayCount, 3)
     print(f"Average = {fAverage}\n")
 
     # calculate days above average temp
