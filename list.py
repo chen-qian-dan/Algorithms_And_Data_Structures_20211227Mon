@@ -108,3 +108,23 @@ def searchInList(lst, target):
     return 'Target is no in the list'
 
 print(searchInList(lst, 'a'))
+
+
+a = [1, 2, 3]
+b = [4, 5, 6]
+print(a + b) # [1, 2, 3, 4, 5, 6], concate
+print(a * 2)
+print(len(a))
+print(a.count(1))
+print(max(a))
+print(min(a))
+print(a, b)
+
+
+for x, y in zip(a, b):
+    print(x, y)
+
+print(sum(a))
+# print(sum(a, b)) # no such thing
+
+
