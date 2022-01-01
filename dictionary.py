@@ -53,3 +53,11 @@ d = {'name': 'Qian', 'age': 37}
 value = d.pop('name')
 print(d)
 print(value)
+
+
+
+print("popitem() ----------------------------------")
+d = {'name': 'Qian', 'age': 37}
+value = d.popitem() # return {k, value}, pop a random pair
+print(d)
+print(value)
