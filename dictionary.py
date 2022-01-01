@@ -46,3 +46,10 @@ def searchDict(d, target):
     print("False")
 
 searchDict(d, target)
+
+
+print("pop() ----------------------------------")
+d = {'name': 'Qian', 'age': 37}
+value = d.pop('name')
+print(d)
+print(value)
