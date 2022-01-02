@@ -67,3 +67,10 @@ print("clear() ----------------------------------")
 d = {'name': 'Qian', 'age': 37}
 d.clear()
 print(d)
+
+
+print("del ----------------------------------")
+d = {'name': 'Qian', 'age': 37}
+del d['name']
+print(d)
+del d
