@@ -18,6 +18,9 @@ print(type(tup))
 tup = tuple('abc') 
 print(tup) # output: ('a', 'b', 'c')
 
+tup = 1, 2, 3
+print(type(tup))
+
 
 print("\n access ----------------------------------")
 tup = (1, 2, 3, 4)
