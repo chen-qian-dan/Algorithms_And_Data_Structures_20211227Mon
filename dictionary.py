@@ -58,7 +58,7 @@ print(value)
 
 print("popitem() ----------------------------------")
 d = {'name': 'Qian', 'age': 37}
-value = d.popitem() # return {k, value}, pop a random pair
+value = d.popitem() # must be no argument return {k, value}, pop a random pair
 print(d)
 print(value)
 
@@ -110,13 +110,5 @@ d = {'name': 'Qian', 'age': 37}
 print(d.values())
 
 
-print(".popitem() ----------------------------------")
-d = {'name': 'Qian', 'age': 37}
-print(d.popitem()) # must be no argument
-print(d)
-
-d = {'age': 37, 'name': 'Qian'}
-print(d.popitem()) # must be no argument, pop the last one when you created the dictionary
-print(d)
 
 
