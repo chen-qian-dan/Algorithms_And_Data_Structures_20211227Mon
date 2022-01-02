@@ -32,6 +32,7 @@ print(sorted(tup)) # [1, 2, 3, 4]
 print(min(tup))
 
 print("\n traverse ----------------------------------")
+tup = (1, 2, 3, 4)
 for v in tup:
     print(v)
 
@@ -40,3 +41,12 @@ for i in range(len(tup)):
 
 for i, v in enumerate(tup):
     print(i, v)
+
+
+print("\n search ----------------------------------")
+tup = (1, 2, 3, 4)
+if 'b' in tup:
+    print(True)
+else:
+    print(False)
+
