@@ -110,5 +110,17 @@ d = {'name': 'Qian', 'age': 37}
 print(d.values())
 
 
+print(".setdefault(key, default_value) ----------------------------------")
+d = {'name': 'Qian', 'age': 37}
+print(d.setdefault('gender', 'M'))
 
 
+# get vs setdefault
+print("get vs setdefault ----------------------------------")
+d = {}
+a = d.setdefault('a', )
+print(a, d)
+
+d = {}
+a = d.get('a', 1)
+print(a, d)
