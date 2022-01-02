@@ -12,3 +12,16 @@ del rec
 rec = {"Name" : "Python", "Age":"20", "Addr" : "NJ", "Country" : "USA"}
 id2 = id(rec)
 print(id1 == id2)
+
+
+
+
+my_dict = {}
+my_dict[1] = 1
+my_dict['1'] = 2
+my_dict[1.0] = 4
+sum = 0
+for k in my_dict:
+    sum += my_dict[k]
+    
+print (sum)
