@@ -61,3 +61,14 @@ print(tup1 * 2) # (1, 4, 3, 2, 5, 1, 4, 3, 2, 5)
 print("\n in ----------------------------------")
 tup1 = (1, 4, 3, 2, 5)
 print(1 in tup1)
+
+print("\n count ----------------------------------")
+tup1 = (1, 4, 3, 2, 5)
+print(tup1.count(1))
+
+
+
+print("\n index ----------------------------------")
+tup1 = (1, 4, 3, 2, 5)
+print(tup1.index(10)) # ValueError: tuple.index(x): x not in tuple
+
