@@ -86,3 +86,8 @@ dd = d # by ref
 dd['name'] = 'Dan'
 print(d)
 print(dd)
+
+print("fromkeys ----------------------------------")
+d = {'name': 'Qian', 'age': 37}
+newd = {}.fromkeys([1, 2, 3], 0)
+print(newd)
