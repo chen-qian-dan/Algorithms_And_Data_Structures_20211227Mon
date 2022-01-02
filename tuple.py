@@ -70,5 +70,13 @@ print(tup1.count(1))
 
 print("\n index ----------------------------------")
 tup1 = (1, 4, 3, 2, 5)
-print(tup1.index(10)) # ValueError: tuple.index(x): x not in tuple
+# print(tup1.index(10)) # ValueError: tuple.index(x): x not in tuple
+
+
+print("\n list to tuple ----------------------------------")
+print(tuple([1, 2, 3]))
+
+
+print("\n tuple to list ----------------------------------")
+print(list((1, 2, 3)))
 
