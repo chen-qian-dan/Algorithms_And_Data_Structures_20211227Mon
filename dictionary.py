@@ -50,7 +50,7 @@ searchDict(d, target)
 
 print("pop() ----------------------------------")
 d = {'name': 'Qian', 'age': 37}
-value = d.pop('name')
+value = d.pop('name') # pop(key, default_value)
 print(d)
 print(value)
 
@@ -115,7 +115,7 @@ d = {'name': 'Qian', 'age': 37}
 print(d.setdefault('gender', 'M'))
 
 
-# get vs setdefault
+
 print("get vs setdefault ----------------------------------")
 d = {}
 a = d.setdefault('a', )
@@ -124,3 +124,9 @@ print(a, d)
 d = {}
 a = d.get('a', 1)
 print(a, d)
+
+
+print(".update() ----------------------------------")
+d = {'name': 'Qian', 'age': 37}
+d.update({'name': 'Dan', 'gender': 'F'})
+print(d)
