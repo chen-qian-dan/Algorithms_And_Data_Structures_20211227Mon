@@ -91,3 +91,7 @@ print("fromkeys ----------------------------------")
 d = {'name': 'Qian', 'age': 37}
 newd = {}.fromkeys([1, 2, 3], 0)
 print(newd)
+
+print(".get{key, value} ----------------------------------")
+d = {'name': 'Qian', 'age': 37}
+print(d.get('gender', 'F'))
