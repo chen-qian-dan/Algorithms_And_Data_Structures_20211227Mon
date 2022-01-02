@@ -30,3 +30,13 @@ print(tup[::-1]) # output: (4, 3, 2, 1)
 print(sorted(tup)) # [1, 2, 3, 4]
 
 print(min(tup))
+
+print("\n traverse ----------------------------------")
+for v in tup:
+    print(v)
+
+for i in range(len(tup)):
+    print(tup[i])
+
+for i, v in enumerate(tup):
+    print(i, v)
