@@ -24,3 +24,8 @@ print(any(d))
 d = {0: False, 1: False}
 print(any(d))
 
+
+print("\n len ----------------------------------")
+d = {1: True, 0: False}
+print(len(d))
+
