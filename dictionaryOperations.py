@@ -29,3 +29,13 @@ print("\n len ----------------------------------")
 d = {1: True, 0: False}
 print(len(d))
 
+
+
+print("\n sorted ----------------------------------")
+d = {1: True, 0: False}
+print(sorted(d, reverse = True)) # return a list of keys
+
+
+print("\n sorted ----------------------------------")
+d = {"a": True, "bbb": False, "abc": True}
+print(sorted(d, key = len)) # return a list of keys
