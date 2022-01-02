@@ -15,3 +15,12 @@ print(all(d))
 d = {0: False, 1: False}
 print(all(d))
 
+
+
+print("\n any ----------------------------------")
+d = {1: True, 0: False}
+print(any(d))
+
+d = {0: False, 1: False}
+print(any(d))
+
