@@ -95,3 +95,7 @@ print(newd)
 print(".get{key, value} ----------------------------------")
 d = {'name': 'Qian', 'age': 37}
 print(d.get('gender', 'F'))
+
+print(".items() ----------------------------------")
+d = {'name': 'Qian', 'age': 37}
+print(d.items()) # output: dict_items([('name', 'Qian'), ('age', 37)])
