@@ -74,3 +74,15 @@ d = {'name': 'Qian', 'age': 37}
 del d['name']
 print(d)
 del d
+
+print("copy() ----------------------------------")
+d = {'name': 'Qian', 'age': 37}
+dd = d.copy() # by value
+dd['name'] = 'Dan'
+print(d)
+print(dd)
+
+dd = d # by ref
+dd['name'] = 'Dan'
+print(d)
+print(dd)
