@@ -99,3 +99,12 @@ print(d.get('gender', 'F'))
 print(".items() ----------------------------------")
 d = {'name': 'Qian', 'age': 37}
 print(d.items()) # output: dict_items([('name', 'Qian'), ('age', 37)])
+
+print(".keys() ----------------------------------")
+d = {'name': 'Qian', 'age': 37}
+print(d.keys())
+
+
+print(".values() ----------------------------------")
+d = {'name': 'Qian', 'age': 37}
+print(d.values())
