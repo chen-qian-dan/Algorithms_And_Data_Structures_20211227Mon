@@ -21,6 +21,16 @@ print(tup) # output: ('a', 'b', 'c')
 tup = 1, 2, 3
 print(type(tup))
 
+tup = 1,
+print(type(tup))
+
+tup = (1)
+print(type(tup)) # int
+
+
+tup = {1}
+print(type(tup)) # set
+
 
 print("\n access ----------------------------------")
 tup = (1, 2, 3, 4)
