@@ -11,6 +11,12 @@ class SinglyLinkedList:
         self.head = None
         self.tail = None 
 
+    def __iter__(self):
+        node = self.head
+        while node:
+            yield node
+            node = node.next
+
 
 singlyLinkedList: SinglyLinkedList = SinglyLinkedList()
 node1: Node = Node(1)
@@ -29,8 +35,10 @@ singlyLinkedList.tail = node2
 # insert a new node at the end
 
 
-
-node = singlyLinkedList.head
-while node:
+for node in singlyLinkedList:
     print(node.value)
-    node = node.next
+
+# node = singlyLinkedList.head
+# while node:
+#     print(node.value)
+#     node = node.next
