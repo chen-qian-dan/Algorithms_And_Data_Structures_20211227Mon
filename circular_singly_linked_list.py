@@ -103,6 +103,7 @@ class CircularSinglyLinkedList:
         if location < -1 or location > self.count - 1:
             print("location is out of range[0, {self.count}]")
             return 
+        self.count -= 1
         # delete the first node
         if location == 0:
             if self.head == self.tail:
@@ -135,6 +136,12 @@ class CircularSinglyLinkedList:
             node.next = node.next.next
 
 
+    def deleteEntireList(self):
+        self.count = 0
+        self.head = None 
+        self.tail.next = None 
+        self.tail = None 
+
 
 csll: CircularSinglyLinkedList = CircularSinglyLinkedList()
 csll.insert('a', 0)
@@ -146,5 +153,6 @@ csll.insert('e', 5)
 print([node.value for node in csll])
 # csll.traverse()
 # print(csll.search(1))
-csll.deleteANode(6)
+# csll.deleteANode(6)
+csll.deleteEntireList()
 print([node.value for node in csll])
