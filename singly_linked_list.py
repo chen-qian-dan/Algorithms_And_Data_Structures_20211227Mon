@@ -48,7 +48,7 @@ class SinglyLinkedList:
         if self.head is None:
             print("The list is empty")
             return 
-            
+
         if location == 0:
             if self.head == self.tail:
                 self.head = None
@@ -79,6 +79,12 @@ class SinglyLinkedList:
                 print("The location is out of range")
             else: 
                 node.next = node.next.next 
+
+            
+    # delete the entire list
+    def deleteEntireList(self):
+        self.head = None 
+        self.tail = None 
 
 
     # traverse
@@ -120,20 +126,24 @@ singlyLinkedList: SinglyLinkedList = SinglyLinkedList()
 
 
 singlyLinkedList.insert(1, -1)
-# singlyLinkedList.insert(2, -1)
-# singlyLinkedList.insert(3, -1)
-# singlyLinkedList.insert(4, 0)
+singlyLinkedList.insert(2, -1)
+singlyLinkedList.insert(3, -1)
+singlyLinkedList.insert(4, 0)
 
 
 
 # singlyLinkedList.traverse()
 # print(singlyLinkedList.search(20))
 
+# print([node.value for node in singlyLinkedList])
+# print(singlyLinkedList.deleteNode(-1))
+# print([node.value for node in singlyLinkedList])
+
+
+print([node.value for node in singlyLinkedList])
+singlyLinkedList.deleteEntireList()
 print([node.value for node in singlyLinkedList])
 
-print(singlyLinkedList.deleteNode(-1))
-
-print([node.value for node in singlyLinkedList])
 
 # node = singlyLinkedList.head
 # while node:
