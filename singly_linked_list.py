@@ -21,3 +21,16 @@ singlyLinkedList.head = node1
 singlyLinkedList.head.next = node2
 singlyLinkedList.tail = node2
 
+# insertion
+# insert a new node at the beginning
+
+# insert a new node after a node
+
+# insert a new node at the end
+
+
+
+node = singlyLinkedList.head
+while node:
+    print(node.value)
+    node = node.next
