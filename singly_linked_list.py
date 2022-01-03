@@ -55,6 +55,22 @@ class SinglyLinkedList:
             node = node.next
 
 
+    # search
+    def search(self, value):
+        if self.head is None:
+            return False
+        node: Node = self.head
+        index: int = 0
+        while node.value != value and node.next:
+            node = node.next
+            index += 1
+
+        if node.value == value:
+            return index
+        return False 
+
+        
+
 singlyLinkedList: SinglyLinkedList = SinglyLinkedList()
 # node1: Node = Node(1)
 # node2: Node = Node(2)
@@ -72,7 +88,8 @@ singlyLinkedList.insert(4, 0)
 
 
 
-singlyLinkedList.traverse()
+# singlyLinkedList.traverse()
+print(singlyLinkedList.search(20))
 
 print([node.value for node in singlyLinkedList])
 
