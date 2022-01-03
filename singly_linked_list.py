@@ -1,3 +1,4 @@
+# Singly Linked List
 # creation
 
 class Node:
@@ -42,6 +43,18 @@ class SinglyLinkedList:
                 tmpNode.next = nodeNew
 
 
+    # traverse
+    def traverse(self):
+        if not self.head:
+            print("The list is empty")
+            return 
+
+        node: Node = self.head
+        while node:
+            print(node.value)
+            node = node.next
+
+
 singlyLinkedList: SinglyLinkedList = SinglyLinkedList()
 # node1: Node = Node(1)
 # node2: Node = Node(2)
@@ -59,7 +72,7 @@ singlyLinkedList.insert(4, 0)
 
 
 
-
+singlyLinkedList.traverse()
 
 print([node.value for node in singlyLinkedList])
 
