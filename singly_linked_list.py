@@ -18,25 +18,50 @@ class SinglyLinkedList:
             node = node.next
 
 
+    # insertion
+    def insert(self, value, location: int):
+        nodeNew: Node = Node(value = value)
+        if self.head is None:
+            self.head = nodeNew
+            self.tail = nodeNew
+        else: 
+            if location == 0:           # head
+                nodeNew.next = self.head
+                self.head = nodeNew
+            elif location == -1:        # tail
+                self.tail.next = nodeNew
+                self.tail = nodeNew
+            else:                       # middle
+                tmpNode = self.head
+                index: int = 0
+                while index < location - 1:
+                    tmpNode = tmpNode.next
+                    index += 1
+
+                nodeNew.next = tmpNode.next
+                tmpNode.next = nodeNew
+
+
 singlyLinkedList: SinglyLinkedList = SinglyLinkedList()
-node1: Node = Node(1)
-node2: Node = Node(2)
+# node1: Node = Node(1)
+# node2: Node = Node(2)
 
 
-singlyLinkedList.head = node1
-singlyLinkedList.head.next = node2
-singlyLinkedList.tail = node2
-
-# insertion
-# insert a new node at the beginning
-
-# insert a new node after a node
-
-# insert a new node at the end
+# singlyLinkedList.head = node1
+# singlyLinkedList.head.next = node2
+# singlyLinkedList.tail = node2
 
 
-for node in singlyLinkedList:
-    print(node.value)
+singlyLinkedList.insert(1, -1)
+singlyLinkedList.insert(2, -1)
+singlyLinkedList.insert(3, -1)
+singlyLinkedList.insert(4, 0)
+
+
+
+
+
+print([node.value for node in singlyLinkedList])
 
 # node = singlyLinkedList.head
 # while node:
