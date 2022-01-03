@@ -1,5 +1,6 @@
 # Circular Singly Linked List
 
+from typing import Optional
 
 class Node:
     def __init__(self, value):
@@ -71,6 +72,15 @@ class CircularSinglyLinkedList:
 
 
 
+    def traverse(self):
+        node: Optional[Node, None] = self.head
+        while node:
+            print(node.value)
+            if node == self.tail:
+                break 
+            else:
+                node = node.next
+
 
 
 csll: CircularSinglyLinkedList = CircularSinglyLinkedList()
@@ -81,3 +91,4 @@ csll.insert('d', 1)
 csll.insert('d', 3)
 csll.insert('e', 5)
 print([node.value for node in csll])
+csll.traverse()
