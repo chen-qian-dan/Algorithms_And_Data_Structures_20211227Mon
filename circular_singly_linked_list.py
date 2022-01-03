@@ -82,6 +82,18 @@ class CircularSinglyLinkedList:
                 node = node.next
 
 
+    def search(self, value):
+        index: int = -1
+        node: Node = self.head
+        while node:
+            index += 1
+            if node.value == value:
+                return index
+            if node == self.tail:
+                break 
+            node = node.next
+        return -1 
+
 
 csll: CircularSinglyLinkedList = CircularSinglyLinkedList()
 csll.insert('a', 0)
@@ -91,4 +103,5 @@ csll.insert('d', 1)
 csll.insert('d', 3)
 csll.insert('e', 5)
 print([node.value for node in csll])
-csll.traverse()
+# csll.traverse()
+print(csll.search(1))
