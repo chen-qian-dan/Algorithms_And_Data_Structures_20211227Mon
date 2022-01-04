@@ -95,6 +95,45 @@ class DoublyLinkedList:
                 node = node.next
         return False 
 
+
+    def deleteOneNode(self, location):
+        if location < -1 or location > self.count - 1 or not self.head:
+            print(f"location is out of range [-1, {self.count - 1}]")
+            return 
+
+        if self.head == self.tail: # only one node
+            node: Node = self.head
+            
+            self.head = None 
+            self.tail = None 
+            return 
+
+        # delete the first one 
+        if location == 0:
+            self.head = self.head.next
+            self.head.pre.next = None 
+            self.head.pre = None 
+        # delete the last one
+        elif location == -1 or location == self.count - 1:
+            self.tail = self.tail.pre 
+            self.tail.next.pre = None 
+            self.tail.next = None 
+        # delete the middle one 
+        else:
+            node: Node = self.head 
+            index: int = 0
+            while index < location - 1:
+                node = node.next
+                index += 1
+            nodeWantToDelete: Node = node.next
+            node.next = nodeWantToDelete.next
+            nodeWantToDelete.next.pre = node 
+            nodeWantToDelete.next = None 
+            nodeWantToDelete.pre = None 
+            
+
+        
+
             
 
             
@@ -130,3 +169,11 @@ dll: DoublyLinkedList = DoublyLinkedList()
 # dll.insert(2, -1)
 # dll.insert(3, -1)
 print(dll.search(2))
+
+# delete -----------------------------------------------
+dll: DoublyLinkedList = DoublyLinkedList()
+dll.append(1)
+
+print([node.value for node in dll])
+dll.deleteOneNode(0)
+print([node.value for node in dll])
