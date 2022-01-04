@@ -141,6 +141,20 @@ class DoublyLinkedList:
             nodeWantToDelete.pre = None 
             
 
+    def deleteEntireList(self):
+        """
+        gabage collection won't collect the node if anyone link to the node
+        even is another node link to that node
+        So, in order to delete the entire list, need to make every node's pre to be None 
+        """
+        node: Node = self.head
+        while node:
+            if node != self.tail:
+                node.next.pre = None 
+                node = node.next
+        self.head = None 
+        self.tail = None 
+
         
 
             
@@ -185,4 +199,12 @@ dll.append(1)
 
 print([node.value for node in dll])
 dll.deleteOneNode(0)
+print([node.value for node in dll])
+
+# delete the entire list -----------------------------------------------
+dll: DoublyLinkedList = DoublyLinkedList()
+dll.append(1)
+dll.insert(2, -1)
+dll.insert(3, -1)
+dll.deleteEntireList()
 print([node.value for node in dll])
