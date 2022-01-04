@@ -103,21 +103,30 @@ class DoublyLinkedList:
 
         if self.head == self.tail: # only one node
             node: Node = self.head
-            
             self.head = None 
             self.tail = None 
             return 
 
         # delete the first one 
         if location == 0:
-            self.head = self.head.next
-            self.head.pre.next = None 
-            self.head.pre = None 
+            if self.head == self.tail: # only one node
+                node: Node = self.head
+                self.head = None 
+                self.tail = None 
+            else: 
+                self.head = self.head.next
+                self.head.pre.next = None 
+                self.head.pre = None 
         # delete the last one
         elif location == -1 or location == self.count - 1:
-            self.tail = self.tail.pre 
-            self.tail.next.pre = None 
-            self.tail.next = None 
+            if self.head == self.tail: # only one node
+                node: Node = self.head
+                self.head = None 
+                self.tail = None 
+            else:
+                self.tail = self.tail.pre 
+                self.tail.next.pre = None 
+                self.tail.next = None 
         # delete the middle one 
         else:
             node: Node = self.head 
