@@ -75,6 +75,17 @@ class DoublyLinkedList:
             print(node.value)
             node = node.next
 
+    def traverseReversally(self):
+        if not self.head:
+            print("The list is empty ")
+        else:
+            node: Node = self.tail 
+            while node:
+                print(node.value)
+                node = node.pre
+
+            
+
             
 
 
@@ -95,6 +106,9 @@ print([node.value for node in dll])
 
 # traverse ----------------------------------------------
 dll: DoublyLinkedList = DoublyLinkedList()
-# dll.append(1)
+dll.append(1)
+dll.insert(2, -1)
+dll.insert(3, -1)
 dll.traverse()
+dll.traverseReversally()
 
