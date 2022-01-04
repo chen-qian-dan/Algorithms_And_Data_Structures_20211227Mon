@@ -65,6 +65,16 @@ class DoublyLinkedList:
 
         self.count += 1 
         return True 
+
+    def traverse(self):
+        if self.head is None:
+            print("The list is empty ")
+        return 
+        node: Node = self.head
+        while node:
+            print(node.value)
+            node = node.next
+
             
 
 
@@ -82,3 +92,9 @@ print([node.value for node in dll])
 dll.insert(2, -1)
 dll.insert(3, -1)
 print([node.value for node in dll])
+
+# traverse ----------------------------------------------
+dll: DoublyLinkedList = DoublyLinkedList()
+# dll.append(1)
+dll.traverse()
+
