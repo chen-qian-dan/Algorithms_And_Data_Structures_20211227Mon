@@ -69,7 +69,7 @@ class DoublyLinkedList:
     def traverse(self):
         if self.head is None:
             print("The list is empty ")
-        return 
+            return 
         node: Node = self.head
         while node:
             print(node.value)
