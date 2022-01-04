@@ -84,6 +84,17 @@ class DoublyLinkedList:
                 print(node.value)
                 node = node.pre
 
+    def search(self, value):
+        node: Node = self.head
+        index = -1
+        while node:
+            index += 1
+            if node.value == value:
+                return index 
+            else:
+                node = node.next
+        return False 
+
             
 
             
@@ -110,5 +121,12 @@ dll.append(1)
 dll.insert(2, -1)
 dll.insert(3, -1)
 dll.traverse()
-dll.traverseReversally()
+# dll.traverseReversally()
 
+
+# search ----------------------------------------------
+dll: DoublyLinkedList = DoublyLinkedList()
+# dll.append(1)
+# dll.insert(2, -1)
+# dll.insert(3, -1)
+print(dll.search(2))
