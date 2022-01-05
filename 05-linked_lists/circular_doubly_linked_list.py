@@ -80,6 +80,17 @@ class CircularDoublyLinkedList:
                 break 
             node = node.next
 
+    def traverseReversly(self):
+        if not self.head:
+            print("The list is empty")
+            return 
+        node: Node = self.tail
+        while node:
+            print(node.value)
+            if node == self.head:
+                break 
+            node = node.prev 
+
 
 
 
@@ -100,6 +111,7 @@ cdll.insert(3, location = 2)
 
 print([node.value for node in cdll])
 # cdll.traverse()
+cdll.traverseReversly()
 
 
  
