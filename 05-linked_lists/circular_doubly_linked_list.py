@@ -156,6 +156,7 @@ class CircularDoublyLinkedList:
             self.tail.next = None
             while node:
                 node.prev = None 
+                node = node.next
             self.head = None 
             self.tail = None 
             return True 
