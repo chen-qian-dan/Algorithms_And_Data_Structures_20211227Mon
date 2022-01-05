@@ -145,6 +145,21 @@ class CircularDoublyLinkedList:
 
         return True 
 
+    
+    def deleteEntireList(self):
+        if not self.head:
+            print("The list is empty already")
+            return False 
+        else:
+            node: Node = self.head
+            # make it non circular first
+            self.tail.next = None
+            while node:
+                node.prev = None 
+            self.head = None 
+            self.tail = None 
+            return True 
+
 
 
 
@@ -171,4 +186,5 @@ print([node.value for node in cdll])
 # print(cdll.search(-11))
 cdll.deleteOneNode(2)
 print([node.value for node in cdll])
- 
+cdll.deleteEntireList()
+print([node.value for node in cdll])
