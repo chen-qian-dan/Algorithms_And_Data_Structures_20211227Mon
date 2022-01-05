@@ -91,6 +91,20 @@ class CircularDoublyLinkedList:
                 break 
             node = node.prev 
 
+    def search(self, value):
+        if self.head is None:
+            print("There is not any node in the list") 
+            return False 
+        else:
+            node: Node = self.head
+            while node:
+                if node.value == value:
+                    return True 
+                elif node == self.tail:
+                    return False 
+                else:
+                    node = node.next
+
 
 
 
@@ -111,7 +125,7 @@ cdll.insert(3, location = 2)
 
 print([node.value for node in cdll])
 # cdll.traverse()
-cdll.traverseReversly()
-
+# cdll.traverseReversly()
+print(cdll.search(-11))
 
  
