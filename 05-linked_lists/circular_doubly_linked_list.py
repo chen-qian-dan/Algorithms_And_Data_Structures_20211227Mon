@@ -72,6 +72,15 @@ class CircularDoublyLinkedList:
             tmpNode.next = node 
 
 
+    def traverse(self):
+        node: Node = self.head
+        while node:
+            print(node.value)
+            if node == self.tail:
+                break 
+            node = node.next
+
+
 
 
 # create -------------------------------------
@@ -90,6 +99,7 @@ print([node.value for node in cdll])
 cdll.insert(3, location = 2)
 
 print([node.value for node in cdll])
+# cdll.traverse()
 
 
  
