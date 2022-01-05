@@ -124,15 +124,13 @@ class CircularDoublyLinkedList:
             self.head = targetNode.next
             self.tail.next = self.head
             self.head.prev = self.tail
-            targetNode.next = None 
-            targetNode.prev = None 
+           
         elif location == -1 or location == self.count - 1:
             targetNode: Node = self.tail
             self.tail = targetNode.prev 
             self.tail.next = self.head
             self.head.prev = self.tail
-            targetNode.next = None 
-            targetNode.prev = None 
+            
         else:
             index: int = 0
             targetNode: Node = self.head
@@ -141,8 +139,7 @@ class CircularDoublyLinkedList:
                 targetNode = targetNode.next
             targetNode.prev.next = targetNode.next
             targetNode.next.prev = targetNode.prev 
-            targetNode.prev = None 
-            targetNode.next = None 
+            
 
         self.count -= 1
 
