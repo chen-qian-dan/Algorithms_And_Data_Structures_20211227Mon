@@ -37,6 +37,7 @@ class CircularDoublyLinkedList:
     def insert(self, value, location: int):
         if self.head is None:
             print("the list is not cated yet.")
+            return False 
 
         if location < -1 or location > self.count + 1:
             print(f"location is out of range [-1, {self.count}]")
@@ -70,6 +71,8 @@ class CircularDoublyLinkedList:
             node.prev = tmpNode 
             tmpNode.next.prev = node 
             tmpNode.next = node 
+
+        self.count += 1
 
 
     def traverse(self):
@@ -105,6 +108,48 @@ class CircularDoublyLinkedList:
                 else:
                     node = node.next
 
+    def deleteOneNode(self, location):
+        if not self.head:
+            print("Can't delete because the list is empty")
+            return False 
+
+        if self.head == self.tail:
+            targetNode: Node = self.head
+            targetNode.prev = None
+            targetNode.next = None 
+            self.head = None 
+            self.tail = None 
+        elif location == 0:
+            targetNode: Node = self.head
+            self.head = targetNode.next
+            self.tail.next = self.head
+            self.head.prev = self.tail
+            targetNode.next = None 
+            targetNode.prev = None 
+        elif location == -1 or location == self.count - 1:
+            targetNode: Node = self.tail
+            self.tail = targetNode.prev 
+            self.tail.next = self.head
+            self.head.prev = self.tail
+            targetNode.next = None 
+            targetNode.prev = None 
+        else:
+            index: int = 0
+            targetNode: Node = self.head
+            while index < location:
+                index += 1
+                targetNode = targetNode.next
+            targetNode.prev.next = targetNode.next
+            targetNode.next.prev = targetNode.prev 
+            targetNode.prev = None 
+            targetNode.next = None 
+
+        self.count -= 1
+
+        return True 
+
+
+
 
 
 
@@ -119,13 +164,14 @@ cdll: CircularDoublyLinkedList = CircularDoublyLinkedList()
 cdll.create(1)
 cdll.insert(0, location = -1)
 cdll.insert(2, location = 1)
-print([node.value for node in cdll])
+# print([node.value for node in cdll])
 
-cdll.insert(3, location = 2)
+# cdll.insert(3, location = 2)
 
 print([node.value for node in cdll])
 # cdll.traverse()
 # cdll.traverseReversly()
-print(cdll.search(-11))
-
+# print(cdll.search(-11))
+cdll.deleteOneNode(2)
+print([node.value for node in cdll])
  
