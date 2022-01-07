@@ -15,7 +15,15 @@ class Stack:
     def isEmpty(self):
         return True if len(self.list) == 0 else False 
 
+    def push(self, value):
+        self.list.append(value)
+
+    
+
 
 s = Stack()
 print(s.isEmpty())
+s.push('a')
+s.push('b')
+print(s)
 
