@@ -49,6 +49,30 @@ def SumLinkedList(list1: LinkedList, list2: LinkedList) -> LinkedList:
         ll.add(remaind)
     return ll 
 
+
+def SumLinkedListVideo(list1: LinkedList, list2: LinkedList) -> LinkedList:
+    # loop both lists together
+    # sum node value up
+    ll = LinkedList()
+
+    node1 = list1.head 
+    node2 = list2.head 
+    div: int = 0
+
+    while node1 or node2:
+        if node1:
+            div += node1.value 
+            node1 = node1.next
+        if node2:
+            div += node2.value 
+            node2 = node2.next
+
+        div, remaind = divmod(div, 10)
+        ll.add(remaind)
+        
+    return ll 
+
+
 list1 = LinkedList()
 list1.add(7)
 list1.add(1)
@@ -59,4 +83,4 @@ list2.add(5)
 list2.add(9)
 list2.add(2)
 
-print(SumLinkedList(list1, list2))
+print(SumLinkedListVideo(list1, list2))
