@@ -74,6 +74,26 @@ def partition(ll: LinkedList, x: int) -> LinkedList:
 
 
 
+def partitionVideo(ll, x):
+    curNode = ll.head 
+    ll.tail = ll.head 
+
+    while curNode:
+        nextNode = curNode.next 
+        curNode.next = None 
+        if curNode.value < x:
+            curNode.next = ll.head 
+            ll.head = curNode 
+        else:
+            ll.tail.next = curNode
+            ll.tail = curNode 
+        curNode = nextNode 
+
+    # if ll.tail.next is not None:
+    #     ll.tail.next = None 
+
+
+
 
 
 ll: LinkedList = LinkedList()
@@ -88,4 +108,5 @@ ll.add(7)
 ll.add(9)
 ll.add(45)
 print(ll)
-print(partition(ll, 40))
+partitionVideo(ll, 40)
+print(ll)
