@@ -12,9 +12,10 @@ class Stack:
         values = [str(x) for x in tmpList]
         return '\n'.join(values)
 
-    
+    def isEmpty(self):
+        return True if len(self.list) == 0 else False 
 
 
 s = Stack()
-print(s)
+print(s.isEmpty())
 
