@@ -28,6 +28,10 @@ class Stack:
             return "The stack is empty"
         return self.list[-1]
 
+    def delete(self):
+        self.list = None 
+        return "Delete the entire stack successfully"
+
 
 
 s = Stack()
@@ -40,4 +44,5 @@ print(s)
 # print(s)
 print("peek ---------------------------")
 print(s.peek())
+print(s.delete())
 
