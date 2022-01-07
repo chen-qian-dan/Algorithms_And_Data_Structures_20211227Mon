@@ -5,7 +5,13 @@ such that all nodes less than x come before all nodes greater than or equal to x
 """
 
 """
-input: para types -> output: para types -> problem define -> edge cases -> time complexity, space complexity
+1. input: para types 
+2. -> output: para types 
+3. -> problem define 
+4. -> edge cases 
+5. -> time complexity
+6. -> space complexity
+
 input:
 ll: LinkedList
 x: int 
