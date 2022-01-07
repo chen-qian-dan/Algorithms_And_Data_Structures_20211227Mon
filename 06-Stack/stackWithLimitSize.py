@@ -29,6 +29,18 @@ class Stack:
         else:
             print("Can't push, exceed the max size")
 
+    def pop(self):
+        if self.isEmpty():
+            return "The empty is empty"
+        return self.list.pop()
+
+
+    def peek(self):
+        if self.isEmpty():
+            return "The empty is empty"
+        return self.list[-1]
+
+
 
 
 s = Stack(10)
