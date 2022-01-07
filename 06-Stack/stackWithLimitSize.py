@@ -40,6 +40,10 @@ class Stack:
             return "The empty is empty"
         return self.list[-1]
 
+    def delete(self):
+        self.list = None 
+        print("Delete successfully")
+
 
 
 
