@@ -11,4 +11,8 @@ class Queue:
     def isEmpty(self):
         return True if len(self.items) == 0 else False 
 
+    def enqueue(self, value): # O(1)
+        self.items.append(value)
+        print("Enqueue successfully")
+
     
