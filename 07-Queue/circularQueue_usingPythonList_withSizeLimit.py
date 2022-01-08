@@ -39,6 +39,22 @@ class CircularQueue:
                 
             self.items[self.tailIndex] = value 
 
+    def dequeue(self):
+        if self.headIndex == -1:
+            return "The queue is empty"
+        else:
+            value = self.items[self.headIndex]
+            if self.headIndex == self.tailIndex:
+                self.headIndex = -1
+                self.tailIndex = -1
+            else:
+                self.items[self.headIndex] = None 
+                self.headIndex += 1
+                if self.headIndex == self.maxSize:
+                    self.headIndex = 0
+            return value 
+
+
 
 
 cq = CircularQueue(6)
@@ -47,4 +63,6 @@ print(cq.isEmpty())
 cq.enqueue(1)
 cq.enqueue(2)
 cq.enqueue(3)
+print(cq)
+print(cq.dequeue())
 print(cq)
