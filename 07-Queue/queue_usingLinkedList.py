@@ -40,8 +40,12 @@ class Queue:
             return "The queue is empty"
         else:
             value = self.head 
-            self.head = self.head.next 
-            return value 
+            if self.head == self.tail:
+                self.head = None 
+                self.tail = None 
+            else:
+                self.head = self.head.next 
+                return value 
 
 q = Queue()
 print(q.isEmpty())
