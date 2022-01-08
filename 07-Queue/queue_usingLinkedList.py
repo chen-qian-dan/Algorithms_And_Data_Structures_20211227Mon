@@ -47,6 +47,13 @@ class Queue:
                 self.head = self.head.next 
                 return value 
 
+    def peek(self):
+        if not self.head:
+            return "The queue is empty"
+        else:
+            return self.head 
+
+
 q = Queue()
 print(q.isEmpty())
 q.enqueue(1)
@@ -56,6 +63,7 @@ print(q)
 print(q.isEmpty())
 print(q.dequeue())
 print(q.dequeue())
+print(q.peek())
 
 
     
