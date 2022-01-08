@@ -51,7 +51,11 @@ class Queue:
         if not self.head:
             return "The queue is empty"
         else:
-            return self.head 
+            return self.head
+
+    def delete(self):
+        self.head = None 
+        self.tail = None  
 
 
 q = Queue()
