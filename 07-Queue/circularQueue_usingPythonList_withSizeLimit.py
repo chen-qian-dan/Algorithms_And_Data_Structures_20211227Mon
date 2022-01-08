@@ -54,6 +54,12 @@ class CircularQueue:
                     self.headIndex = 0
             return value 
 
+    def peek(self):
+        if self.headIndex == -1:
+            return "The queue is empty"
+        else:
+            return self.items[self.headIndex]
+
 
 
 
@@ -66,3 +72,4 @@ cq.enqueue(3)
 print(cq)
 print(cq.dequeue())
 print(cq)
+print(cq.peek())
