@@ -60,6 +60,11 @@ class CircularQueue:
         else:
             return self.items[self.headIndex]
 
+    def delete(self):
+        self.headIndex = -1
+        self.tailIndex = -1
+        self.items = [None] * self.maxSize 
+
 
 
 
