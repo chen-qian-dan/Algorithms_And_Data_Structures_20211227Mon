@@ -13,13 +13,18 @@ class Queue:
 
     def enqueue(self, value): # O(1)
         self.items.append(value)
-        print("Enqueue successfully")
+        return "Enqueue successfully"
 
-    def dequeue(self):
+    def dequeue(self): # O(n)
         if self.isEmpty():
             return "The queue is empty"
         value = self.items.pop(0)
         return value 
+
+    def peek(self):
+        if self.isEmpty():
+            return "The queue is empty"
+        return self.items[0]
 
 
 
@@ -32,4 +37,5 @@ q.enqueue(3)
 print(q)
 print(q.dequeue())
 print(q)
+print(q.peek())
     
