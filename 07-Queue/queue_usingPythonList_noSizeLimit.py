@@ -15,4 +15,21 @@ class Queue:
         self.items.append(value)
         print("Enqueue successfully")
 
+    def dequeue(self):
+        if self.isEmpty():
+            return "The queue is empty"
+        value = self.items.pop(0)
+        return value 
+
+
+
+q = Queue()
+print(q.isEmpty())
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+
+print(q)
+print(q.dequeue())
+print(q)
     
