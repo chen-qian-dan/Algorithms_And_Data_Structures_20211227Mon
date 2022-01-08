@@ -39,7 +39,11 @@ class Stack:
         self.head = self.head.next 
         return value 
 
+    def peek(self):
+        if self.isEmpty():
+            return "Stack is empty"
         
+        return self.head.value 
 
 
 
@@ -50,6 +54,5 @@ stack.push(1)
 stack.push(2)
 
 print(stack)
-print(stack.pop())
-print(stack.pop())
-print(stack.pop())
+print(stack.peek())
+
