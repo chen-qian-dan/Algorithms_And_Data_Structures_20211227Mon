@@ -26,6 +26,9 @@ class Queue:
             return "The queue is empty"
         return self.items[0]
 
+    def delete(self):
+        self.items = list()
+
 
 
 q = Queue()
@@ -38,4 +41,4 @@ print(q)
 print(q.dequeue())
 print(q)
 print(q.peek())
-    
+q.delete()
