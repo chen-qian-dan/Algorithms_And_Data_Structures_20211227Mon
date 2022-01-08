@@ -4,17 +4,17 @@ class CircularQueue:
     def __init__(self, maxSize):
         self.items = [None] * maxSize
         self.maxSize = maxSize 
-        self.outIndex = -1
-        self.inIndex = -1
+        self.headIndex = -1
+        self.tailIndex = -1
 
     def __str__(self):
         values = [str(v) for v in self.items]
         return ' '.join(values)
 
     def isFull(self):
-        if self.inIndex == 0 and self.outIndex == self.maxSize - 1:
+        if self.headIndex == 0 and self.tailIndex == self.maxSize - 1:
             return True 
-        elif self.outIndex + 1 == self.inIndex:
+        elif self.tailIndex + 1 == self.headIndex:
             return True 
         else:
             return False 
