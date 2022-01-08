@@ -32,11 +32,16 @@ class Queue:
             self.tail.next = node 
             self.tail = node 
 
+    def isEmpty(self):
+        return True if not self.head else False 
+
 q = Queue()
+print(q.isEmpty())
 q.enqueue(1)
 q.enqueue(2)
 q.enqueue(3)
 print(q)
+print(q.isEmpty())
 
 
     
