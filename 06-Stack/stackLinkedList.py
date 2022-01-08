@@ -9,18 +9,25 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None 
-        self.tail = None 
 
     def __iter__(self):
         node = self.head 
         while node:
             yield node 
             node = node.next 
+    
+    def __str__(self):
+        values = [str(x.value) for x in self]
+        return '->'.join(values)
 
 
 class Stack:
     def __init__(self):
         self.LinkedList = LinkedList()
+
+    def __str__(self):
+        values = [str(x) for x in self.LinkedList] 
+        return '->'.join(values)
 
 
     def isEmpty(self): # time: O(1), space: O(1)
@@ -37,3 +44,7 @@ class Stack:
 
 stack = Stack()
 print(stack.isEmpty())
+stack.push(1)
+stack.push(2)
+
+print(stack.LinkedList)
