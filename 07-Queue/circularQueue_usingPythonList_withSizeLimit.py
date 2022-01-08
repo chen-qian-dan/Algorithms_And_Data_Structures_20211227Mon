@@ -23,8 +23,28 @@ class CircularQueue:
     def isEmpty(self):
         return True if self.headIndex == -1 else False 
 
+    def enqueue(self, value):
+        if self.isFull():
+            print("The queue is full")
+            return 
+        if self.headIndex == -1:
+            self.headIndex = 0
+            self.tailIndex = 0
+            self.items[self.tailIndex] = value 
+        else:
+            self.tailIndex += 1
+            
+            if self.tailIndex == self.maxSize:
+                self.tailIndex = 0
+                
+            self.items[self.tailIndex] = value 
+
 
 
 cq = CircularQueue(6)
 print(cq.isFull())
 print(cq.isEmpty())
+cq.enqueue(1)
+cq.enqueue(2)
+cq.enqueue(3)
+print(cq)
