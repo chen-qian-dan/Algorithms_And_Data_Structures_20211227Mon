@@ -45,6 +45,8 @@ class Stack:
         
         return self.head.value 
 
+    def delete(self):
+        self.head = None 
 
 
 
