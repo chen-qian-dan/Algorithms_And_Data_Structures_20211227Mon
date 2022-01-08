@@ -20,6 +20,11 @@ class CircularQueue:
             return False 
 
 
+    def isEmpty(self):
+        return True if self.headIndex == -1 else False 
+
+
 
 cq = CircularQueue(6)
 print(cq.isFull())
+print(cq.isEmpty())
