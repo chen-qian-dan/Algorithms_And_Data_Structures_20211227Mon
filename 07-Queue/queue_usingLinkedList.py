@@ -23,5 +23,21 @@ class Queue:
         values = [str(node.value) for node in self]
         return ' '.join(values)
 
+    def enqueue(self, value):
+        node = Node(value)
+        if not self.head:
+            self.head = node 
+            self.tail = node 
+        else:
+            self.tail.next = node 
+            self.tail = node 
+
+q = Queue()
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+print(q)
+
+
     
 
