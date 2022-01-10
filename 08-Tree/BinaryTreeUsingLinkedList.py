@@ -51,4 +51,14 @@ def inOrderTraversal(rootNode): # time O(n), space(n)
     print(rootNode.data)
     inOrderTraversal(rootNode.rightChild) # time O(n/2)
 
-inOrderTraversal(tree)
+# inOrderTraversal(tree)
+
+
+def postOrderTraversal(rootNode): # time O(n), space(n)
+    if not rootNode:
+        return 
+    postOrderTraversal(rootNode.leftChild) # time O(n/2)
+    postOrderTraversal(rootNode.rightChild) # time O(n/2)
+    print(rootNode.data)
+
+postOrderTraversal(tree)
