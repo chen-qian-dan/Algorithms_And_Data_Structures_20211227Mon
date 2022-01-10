@@ -23,10 +23,14 @@ class TreeNode:
     
 tree = TreeNode("Drinks")
 
-leftChild = TreeNode("Hot")
-rightChild = TreeNode("Cold")
-tree.leftChild = leftChild
-tree.rightChild = rightChild 
+hot = TreeNode("Hot")
+cold = TreeNode("Cold")
+
+tea = TreeNode("Tea")
+
+tree.leftChild = hot
+tree.rightChild = cold
+hot.leftChild = tea 
 
 # print(tree)
 
@@ -38,4 +42,13 @@ def preOrderTraversal(rootNode): # time O(n), space O(n)
     preOrderTraversal(rootNode.rightChild) # time O(n/2)
 
 
-preOrderTraversal(tree)
+# preOrderTraversal(tree)
+
+def inOrderTraversal(rootNode): # time O(n), space(n)
+    if not rootNode:
+        return 
+    inOrderTraversal(rootNode.leftChild) # time O(n/2)
+    print(rootNode.data)
+    inOrderTraversal(rootNode.rightChild) # time O(n/2)
+
+inOrderTraversal(tree)
