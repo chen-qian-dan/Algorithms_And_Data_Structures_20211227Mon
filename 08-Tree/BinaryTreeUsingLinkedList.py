@@ -144,6 +144,33 @@ def searchANodeInBinaryTree(rootNode, data) -> bool:
 print(searchANodeInBinaryTree(tree, "Tea"))
 
 
+def insertNodeBT(rootNode, newNode):
+    if not rootNode:
+        rootNode = newNode 
+    else:
+        q = Queue()
+        q.enqueue(rootNode)
+        while not q.isEmpty():
+            treeNode = q.dequeue()
+            if not treeNode.leftChild:
+                treeNode.leftChild = newNode
+                break 
+            q.enqueue(treeNode.leftChild)
+            if not treeNode.rightChild:
+                treeNode.rightChild = newNode
+                break
+            q.enqueue(treeNode.rightChild)
+        print("Insert successfully")
+
+
+colar = TreeNode("Colar")
+insertNodeBT(tree, colar)
+levelOrderTraversal(tree)
+                 
+            
+
+
+
 
     
 
