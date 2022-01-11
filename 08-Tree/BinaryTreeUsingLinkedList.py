@@ -1,4 +1,48 @@
 # BinaryTreeUsingLinkedList
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None 
+
+class Queue:
+    def __init__(self):
+        self.head = None 
+        self.tail = None 
+
+    def isEmpty(self):
+        return True if not self.head else False 
+
+    def create(self, data):
+        if not self.head:
+            print ("The queue is not empty, need to call empty before create")
+            return 
+        node = Node(data)
+        self.head = node
+        self.tail = node 
+
+    def enqueue(self, data):
+        # add at tail, remove at head 
+        node = Node(data)
+        if self.isEmpty():
+            self.head = node 
+            self.tail = node 
+
+        else:
+            self.tail.next = node 
+            self.tail = node 
+
+    def dequeue(self):
+        if self.isEmpty():
+            return "The queue is empty"
+        value = self.head.data
+        if self.head == self.tail:
+            self.head = None 
+            self.tail = None 
+        else:
+            self.head = self.head.next 
+        return value 
+
+
 
 # Create
 class TreeNode:
@@ -61,4 +105,24 @@ def postOrderTraversal(rootNode): # time O(n), space(n)
     postOrderTraversal(rootNode.rightChild) # time O(n/2)
     print(rootNode.data)
 
-postOrderTraversal(tree)
+# postOrderTraversal(tree)
+
+
+def levelOrderTraversal(rootNode):
+    # need a queue
+    if not rootNode:
+        return 
+    q = Queue()
+    q.enqueue(rootNode)
+    while not q.isEmpty():
+        node = q.dequeue()
+        print(node.data)
+        if node.leftChild:
+            q.enqueue(node.leftChild)
+        if node.rightChild:
+            q.enqueue(node.rightChild)
+
+levelOrderTraversal(tree)
+
+    
+
