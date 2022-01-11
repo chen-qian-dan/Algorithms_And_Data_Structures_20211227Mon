@@ -124,5 +124,26 @@ def levelOrderTraversal(rootNode):
 
 levelOrderTraversal(tree)
 
+def searchANodeInBinaryTree(rootNode, data) -> bool:
+    if not rootNode:
+        print("The tree is empty")
+        return False 
+    
+    q = Queue()
+    q.enqueue(rootNode)
+    while not q.isEmpty():
+        node = q.dequeue()
+        if node.data == data:
+            return True 
+        if node.leftChild:
+            q.enqueue(node.leftChild)
+        if node.rightChild:
+            q.enqueue(node.rightChild)
+    return False 
+
+print(searchANodeInBinaryTree(tree, "Tea"))
+
+
+
     
 
