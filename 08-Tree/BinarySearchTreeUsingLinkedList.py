@@ -53,6 +53,13 @@ def inOrderTraverse(rootNode: BSTNode):
     print(rootNode.data)
     inOrderTraverse(rootNode.rightChild)
 
+def postOrderTraverse(rootNode: BSTNode):
+    if not rootNode:
+        return 
+    postOrderTraverse(rootNode.leftChild)
+    postOrderTraverse(rootNode.rightChild)
+    print(rootNode.data)
+
 
 
 newBTS = BSTNode(None)
@@ -69,3 +76,5 @@ insertNode(newBTS, 40)
 # print(newBTS.leftChild.data)
 
 preOrderTraverse(newBTS)
+inOrderTraverse(newBTS)
+postOrderTraverse(newBTS)
