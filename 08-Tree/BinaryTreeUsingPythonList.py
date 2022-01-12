@@ -25,10 +25,23 @@ class BinaryTree:
         return "Not found"
 
 
+    def preOrderTraverse(self, index: int):
+        if index > self.lastUsedIndex or index < 1:
+            return 
+        print(self.list[index])
+        self.preOrderTraverse(index * 2)
+        self.preOrderTraverse(index * 2 + 1)
+
+
+
 
 bt = BinaryTree(8)
 print(bt.insertNode("Drinks"))
 print(bt.insertNode("Hot"))
 print(bt.insertNode("Cold"))
+print(bt.insertNode("Tea"))
+print(bt.insertNode("Coffee"))
 
 print(bt.searchNode("Hot"))
+
+bt.preOrderTraverse(1)
