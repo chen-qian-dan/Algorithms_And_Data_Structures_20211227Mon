@@ -45,7 +45,7 @@ class Queue:
                 self.tail = None 
             else:
                 self.head = self.head.next 
-                return value 
+            return value 
 
     def peek(self):
         if not self.head:
