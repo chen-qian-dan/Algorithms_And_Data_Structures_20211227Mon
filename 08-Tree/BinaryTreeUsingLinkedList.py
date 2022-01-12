@@ -34,13 +34,13 @@ class Queue:
     def dequeue(self):
         if self.isEmpty():
             return "The queue is empty"
-        value = self.head.data
+        nodes = self.head
         if self.head == self.tail:
             self.head = None 
             self.tail = None 
         else:
             self.head = self.head.next 
-        return value 
+        return nodes 
 
 
 
@@ -116,6 +116,7 @@ def levelOrderTraversal(rootNode):
     q.enqueue(rootNode)
     while not q.isEmpty():
         node = q.dequeue()
+        node = node.data
         print(node.data)
         if node.leftChild:
             q.enqueue(node.leftChild)
@@ -133,6 +134,7 @@ def searchANodeInBinaryTree(rootNode, data) -> bool:
     q.enqueue(rootNode)
     while not q.isEmpty():
         node = q.dequeue()
+        node = node.data
         if node.data == data:
             return True 
         if node.leftChild:
@@ -152,6 +154,7 @@ def insertNodeBT(rootNode, newNode):
         q.enqueue(rootNode)
         while not q.isEmpty():
             treeNode = q.dequeue()
+            treeNode = treeNode.data 
             if not treeNode.leftChild:
                 treeNode.leftChild = newNode
                 break 
@@ -166,6 +169,91 @@ def insertNodeBT(rootNode, newNode):
 colar = TreeNode("Colar")
 insertNodeBT(tree, colar)
 levelOrderTraversal(tree)
+
+def getDeepestNode(rootNode):
+    if not rootNode:
+        return None 
+    q = Queue()
+    q.enqueue(rootNode)
+    while not q.isEmpty():
+        treeNode = q.dequeue()
+        treeNode = treeNode.data
+        if treeNode.leftChild:
+            q.enqueue(treeNode.leftChild)
+        if treeNode.rightChild:
+            q.enqueue(treeNode.rightChild)
+
+    return treeNode 
+
+
+def deleteNodeBT(rootNode, data):
+    if not rootNode:
+        return "The tree is empty"
+    
+    if not rootNode.leftChild and not rootNode.rightChild:
+        if rootNode.data == data:
+            rootNode = None 
+            return "Delete node successfully"
+        else:
+            return "There is no such node in the tree"
+
+    deepestTreeNode = getDeepestNode(rootNode)
+
+    q = Queue()
+    q.enqueue(rootNode)
+    while not q.isEmpty():
+        treeNode = q.dequeue()
+        treeNode = treeNode.data
+
+        if treeNode.leftChild and treeNode.leftChild.data == data:
+            treeNode.leftChild.data = deepestTreeNode.data 
+            # deepestTreeNode = None # can't do this way
+            deleteDeepestNode(rootNode)
+            return "Delete node successfully"
+        elif treeNode.leftChild:
+            q.enqueue(treeNode.leftChild)
+        
+        if treeNode.rightChild and treeNode.rightChild.data == data:
+            treeNode.rightChild.data = deepestTreeNode.data 
+            # deepestTreeNode = None # can't do this way
+            deleteDeepestNode(rootNode)
+            return "Delete node successfully"
+        elif treeNode.rightChild:
+            q.enqueue(treeNode.rightChild)
+
+    return "There is no such node in the tree"
+
+
+
+def deleteDeepestNode(rootNode):
+    if not rootNode:
+        return 
+    deepestNode = getDeepestNode(rootNode) # return by ref
+    q = Queue()
+    q.enqueue(rootNode)
+    while not q.isEmpty():
+        treeNode = q.dequeue().data 
+        if treeNode.leftChild is deepestNode:
+            treeNode.leftChild = None 
+            return 
+        if treeNode.rightChild is deepestNode:
+            treeNode.rightChild = None 
+            return 
+        
+        if treeNode.leftChild:
+            q.enqueue(treeNode.leftChild)
+        if treeNode.rightChild:
+            q.enqueue(treeNode.rightChild)
+
+
+levelOrderTraversal(tree)
+print("---------------------")
+# deleteDeepestNode(tree)
+deleteNodeBT(tree, "Tea")
+
+levelOrderTraversal(tree)
+
+
                  
             
 
