@@ -1,4 +1,5 @@
 # BinaryTreeUsingLinkedList
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -246,11 +247,24 @@ def deleteDeepestNode(rootNode):
             q.enqueue(treeNode.rightChild)
 
 
+def deleteBT(rootNode):
+    if not rootNode:
+        return "The tree is deleted already"
+
+    rootNode.data = None 
+    rootNode.leftChild = None 
+    rootNode.rightChild = None 
+    return "The tree is deleted successfully"
+
+
+
 levelOrderTraversal(tree)
 print("---------------------")
 # deleteDeepestNode(tree)
 deleteNodeBT(tree, "Tea")
 
+levelOrderTraversal(tree)
+deleteBT(tree)
 levelOrderTraversal(tree)
 
 
