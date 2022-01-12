@@ -53,6 +53,21 @@ class BinaryTree:
             print(self.list[i])
 
 
+    def deleteNode(self, value):
+        # use the deepest node to replace the node you want to delete
+        if self.lastUsedIndex == 0:
+            return "There is not any node to delete"
+        for i in range(1, self.maxsize + 1):
+            if self.list[i] == value:
+                self.list[i] = self.list[self.lastUsedIndex]
+                self.list[self.lastUsedIndex] = None 
+                self.lastUsedIndex -= 1
+                return "Deleted successfully"
+            
+        return "There is no such node with that value"
+
+
+
 
 
 bt = BinaryTree(8)
