@@ -1,5 +1,44 @@
 # Binary Search Tree Using Linked List
 
+class QNode:
+    def __init__(self, data):
+        self.data = data 
+        self.next = None 
+
+class Queue:
+    # insert at the end
+    # remove at the beginning
+    def __init__(self):
+        self.head = None 
+        self.tail = None 
+
+    def enqueue(self, data):
+        node =QNode(data)
+        if not self.head:
+            self.head = node
+            self.tail = node 
+        else:
+            self.tail.next = node
+            self.tail = node 
+
+    def dequeue(self):
+        if not self.head:
+            return "The queue is empty"
+        elif self.head == self.tail:
+            data = self.head.data
+            self.head = None 
+            self.tail = None 
+            return data 
+        else:
+            data = self.head.data
+            self.head = self.head.next 
+            return data 
+
+    def isEmpty(self):
+        return True if not self.head else False 
+
+
+
 
 
 # create
@@ -60,6 +99,20 @@ def postOrderTraverse(rootNode: BSTNode):
     postOrderTraverse(rootNode.rightChild)
     print(rootNode.data)
 
+def levelOrderTraverse(rootNode: BSTNode):
+    if not rootNode:
+        return 
+
+    q = Queue()
+    q.enqueue(rootNode)
+    while not q.isEmpty():
+        node = q.dequeue()
+        print(node.data)
+        if node.leftChild:
+            q.enqueue(node.leftChild)
+        if node.rightChild:
+            q.enqueue(node.rightChild)
+
 
 
 newBTS = BSTNode(None)
@@ -75,6 +128,7 @@ insertNode(newBTS, 40)
 # print(newBTS.data)
 # print(newBTS.leftChild.data)
 
-preOrderTraverse(newBTS)
-inOrderTraverse(newBTS)
-postOrderTraverse(newBTS)
+# preOrderTraverse(newBTS)
+# inOrderTraverse(newBTS)
+# postOrderTraverse(newBTS)
+levelOrderTraverse(newBTS)
