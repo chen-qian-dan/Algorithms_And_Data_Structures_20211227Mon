@@ -67,6 +67,14 @@ class BinaryTree:
         return "There is no such node with that value"
 
 
+    def deleteEntireBT(self):
+        self.list = None 
+        return "The entire binary tree is deleted"
+
+
+    
+
+
 
 
 
