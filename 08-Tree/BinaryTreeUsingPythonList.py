@@ -39,6 +39,13 @@ class BinaryTree:
         print(self.list[index])
         self.inOrderTraverse(index * 2 + 1)
 
+    def postOrderTraverse(self, index: int):
+        if index > self.lastUsedIndex or index < 1:
+            return 
+        self.postOrderTraverse(index * 2)
+        self.postOrderTraverse(index * 2 + 1)
+        print(self.list[index])
+
 
 
 
@@ -57,4 +64,5 @@ print(bt.insertNode("Coffee"))
 print(bt.searchNode("Hot"))
 
 # bt.preOrderTraverse(1)
-bt.inOrderTraverse(1)
+# bt.inOrderTraverse(1)
+bt.postOrderTraverse(1)
