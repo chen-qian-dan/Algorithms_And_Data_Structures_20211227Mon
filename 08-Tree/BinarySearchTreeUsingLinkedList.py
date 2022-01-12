@@ -37,13 +37,21 @@ def insertNode(root, data):
 def preOrderTraverse(rootNode: BSTNode):
     if not rootNode:
         return 
-        
+
     print(rootNode.data)
     if rootNode.leftChild:
         preOrderTraverse(rootNode.leftChild)
 
     if rootNode.rightChild:
         preOrderTraverse(rootNode.rightChild)
+
+def inOrderTraverse(rootNode: BSTNode):
+    if not rootNode:
+        return 
+    
+    inOrderTraverse(rootNode.leftChild)
+    print(rootNode.data)
+    inOrderTraverse(rootNode.rightChild)
 
 
 
