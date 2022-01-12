@@ -17,8 +17,18 @@ class BinaryTree:
         self.list[self.lastUsedIndex] = value 
         return "The value has been successfully inserted"
 
+    
+    def searchNode(self, value):
+        for v in self.list:
+            if v == value:
+                return "Success"
+        return "Not found"
+
+
 
 bt = BinaryTree(8)
 print(bt.insertNode("Drinks"))
 print(bt.insertNode("Hot"))
 print(bt.insertNode("Cold"))
+
+print(bt.searchNode("Hot"))
