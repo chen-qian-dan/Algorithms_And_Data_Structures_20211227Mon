@@ -23,5 +23,12 @@ def inOrderTraverse(rootNode):
     print(rootNode.data)
     inOrderTraverse(rootNode.rightChild)
 
+def postOrderTraverse(rootNode):
+    if not rootNode:
+        return 
+    postOrderTraverse(rootNode.leftChild)
+    postOrderTraverse(rootNode.rightChild)
+    print(rootNode.data)
+
     
 avl = AVLNode(10)
