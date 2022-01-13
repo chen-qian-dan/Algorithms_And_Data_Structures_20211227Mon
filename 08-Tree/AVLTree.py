@@ -84,8 +84,22 @@ def levelOrderTraverse(rootNode):
         if avlNode.rightChild:
             q.enqueue(avlNode.rightChild)
 
+def searchNode(rootNode, data):
+    if not rootNode:
+        print("Value not found") 
+        return
+    if data == rootNode.data:
+        print("Value found")
+        return  
+    elif data < rootNode.data:
+        searchNode(rootNode.leftChild, data)
+    else:
+        searchNode(rootNode.rightChild, data)
+
+
 
     
 avl = AVLNode(10)
 
 levelOrderTraverse(avl)
+searchNode(avl, 11)
