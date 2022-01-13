@@ -125,6 +125,39 @@ def searchNode(rootNode: BSTNode, data):
         searchNode(rootNode.rightChild, data)
 
 
+def minValueNode(bstNode):
+    curNode = bstNode
+    while curNode.leftChild:
+        curNode = curNode.leftChild 
+
+    return curNode 
+
+
+def deleteNode(rootNode, nodeValue):
+    if not rootNode:
+        return None 
+
+    if nodeValue < rootNode.data:
+        rootNode.leftChild = deleteNode(rootNode.leftChild, nodeValue)
+    elif nodeValue > rootNode.data:
+        rootNode.rightChild = deleteNode(rootNode.right, nodeValue)
+    else:
+        if not rootNode.leftChild:
+            temp = rootNode.rightChild
+            rootNode = None 
+            return temp 
+        if not rootNode.rightChild:
+            temp = rootNode.leftChild
+            rootNode = None 
+            return temp 
+
+        temp = minValueNode(rootNode.rightChild) # -------- O(logN)
+        rootNode.data = temp.data 
+        rootNode.rightChild = deleteNode(rootNode.rightChild, temp.data)
+        return rootNode 
+
+
+
 
 newBTS = BSTNode(None)
 insertNode(newBTS, 70)
@@ -144,4 +177,6 @@ insertNode(newBTS, 40)
 # postOrderTraverse(newBTS)
 # levelOrderTraverse(newBTS)
 
-searchNode(newBTS, 98)
+# searchNode(newBTS, 98)
+deleteNode(newBTS, 70)
+preOrderTraverse(newBTS)
