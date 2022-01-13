@@ -157,6 +157,13 @@ def deleteNode(rootNode, nodeValue):
         return rootNode 
 
 
+def deleteEntireTree(rootNode):
+    rootNode.data = None 
+    rootNode.leftChild = None 
+    rootNode.rightChild = None 
+    return "The BST has been successfully deleted"
+
+
 
 
 newBTS = BSTNode(None)
