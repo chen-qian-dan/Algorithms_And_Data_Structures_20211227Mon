@@ -114,6 +114,17 @@ def levelOrderTraverse(rootNode: BSTNode):
             q.enqueue(node.rightChild)
 
 
+def searchNode(rootNode: BSTNode, data):
+    if not rootNode:
+        print("Not Found")
+    elif data == rootNode.data:
+        print("Found")
+    elif data < rootNode.data:
+        searchNode(rootNode.leftChild, data)
+    else:
+        searchNode(rootNode.rightChild, data)
+
+
 
 newBTS = BSTNode(None)
 insertNode(newBTS, 70)
@@ -131,4 +142,6 @@ insertNode(newBTS, 40)
 # preOrderTraverse(newBTS)
 # inOrderTraverse(newBTS)
 # postOrderTraverse(newBTS)
-levelOrderTraverse(newBTS)
+# levelOrderTraverse(newBTS)
+
+searchNode(newBTS, 98)
