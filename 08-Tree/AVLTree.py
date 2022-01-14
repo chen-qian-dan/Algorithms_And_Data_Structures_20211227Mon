@@ -5,6 +5,7 @@ class QNode:
         self.data = data 
         self.next = None 
 
+
 class Queue:
     # enqueue at the end
     # dequeue at the beginning
