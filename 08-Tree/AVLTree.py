@@ -106,6 +106,16 @@ def getHeight(rootNode: AVLNode) -> int:
     return rootNode.height
 
 
+def rightRotate(disbalancedNode):
+    newRoot = disbalancedNode.leftChild 
+    disbalancedNode.leftChild = disbalancedNode.leftChild.rightChild 
+    newRoot.rightChild = disbalancedNode
+    disbalancedNode.height = 1 + max(getHeight(disbalancedNode.leftChild), getHeight(disbalancedNode.rightChild))
+    newRoot.height = 1 + max(getHeight(newRoot.leftChild), getHeight(newRoot.rightChild))
+    return newRoot
+
+
+
     
 avl = AVLNode(10)
 
