@@ -201,6 +201,13 @@ def deleteNode(rootNode, value):
 
     return rootNode
 
+
+def deleteEntireAVLTree(rootNode):
+    rootNode.data = None 
+    rootNode.leftChild = None 
+    rootNode.rightChild = None 
+    return "The AVL has been successfully deleted"
+
                 
 
 avl = AVLNode(5)
