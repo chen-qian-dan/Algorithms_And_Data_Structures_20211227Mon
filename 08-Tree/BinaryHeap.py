@@ -6,7 +6,7 @@ class Heap:
     def __init__(self, maxSize: int):
         self.list = [None] * (maxSize + 1)
         self.maxSize: int = maxSize + 1
-        self.size: int = 0 
+        self.heapSize: int = 0 
 
 def peekofHeap(rootNode):
     if not rootNode:
@@ -14,5 +14,13 @@ def peekofHeap(rootNode):
     return rootNode.list[1]
 
 
+def sizeofHeap(rootNode):
+    if not rootNode:
+        return 
+    return rootNode.heapSize
+    
+
+
 heap = Heap(5)
 print(peekofHeap(heap))
+print(sizeofHeap(heap))
