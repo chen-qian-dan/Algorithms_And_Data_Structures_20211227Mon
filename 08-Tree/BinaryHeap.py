@@ -122,6 +122,9 @@ def extractNode(rootNode, heapType):
     heapifyTreeExtract(rootNode, 1, heapType)
     return extractedNode
 
+
+def deleteEntireBP(rootNode):
+    rootNode.list = None 
     
 
 
