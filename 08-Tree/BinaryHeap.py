@@ -18,7 +18,13 @@ def sizeofHeap(rootNode):
     if not rootNode:
         return 
     return rootNode.heapSize
-    
+
+
+def levelTraverse(rootNode):
+    if not rootNode:
+        return 
+    for i in range(1, rootNode.heapSize + 1):
+        print(rootNode.list[i])
 
 
 heap = Heap(5)
