@@ -8,6 +8,11 @@ class Heap:
         self.maxSize: int = maxSize + 1
         self.size: int = 0 
 
+def peekofHeap(rootNode):
+    if not rootNode:
+        return 
+    return rootNode.list[1]
 
 
 heap = Heap(5)
+print(peekofHeap(heap))
