@@ -154,10 +154,61 @@ def insertNode(rootNode, nodeValue):
     return rootNode
 
 
+
+def getMinValueNode(rootNode):
+    if not rootNode or not rootNode.leftChild:
+        return rootNode
+    return getMinValueNode(rootNode.leftChild)
+
+
+
+def deleteNode(rootNode, value):
+    if not rootNode:
+        return rootNode
+    if value < rootNode.data:
+        rootNode.leftChild = deleteNode(rootNode.leftChild, value)
+    elif value > rootNode.data:
+        rootNode.rightChild = deleteNode(rootNode.rightChild, value)
+    else:
+        if not rootNode.leftChild:
+            temp = rootNode.rightChild
+            rootNode = None 
+            return temp
+        elif not rootNode.rightChild:
+            temp = rootNode.leftChild
+            rootNode = None 
+            return temp 
+        else:
+            temp = getMinValueNode(rootNode.rightChild)
+            rootNode.data = temp.data 
+            rootNode.right = deleteNode(rootNode.right, temp.data)
+
+    rootNode.height = 1 + max(getHeight(rootNode.leftChild), getHeight(rootNode.rightChild))
+    balance = getBalance(rootNode)
+    if balance > 1:
+        if getBalance(rootNode.leftChild) >= 0: # LL condition
+            return rightRotate(rootNode)
+        else:   # LR condition
+            rootNode.leftChild = leftRotate(rootNode.leftChild)
+            return rightRotate(rootNode)
+
+    if balance < -1:
+        if getBalance(rootNode.rightChild) <= 0: # RR condition
+            return leftRotate(rootNode)
+        else: # RL condition
+            rootNode.rightChild = rightRotate(rootNode.rightChild)
+            return leftRotate(rootNode)
+
+    return rootNode
+
+                
+
 avl = AVLNode(5)
 avl = insertNode(avl, 10)
 avl = insertNode(avl, 15)
 avl = insertNode(avl, 20)
 
+levelOrderTraverse(avl)
+deleteNode(avl, 15)
 levelOrderTraverse(avl)
 searchNode(avl, 11)
