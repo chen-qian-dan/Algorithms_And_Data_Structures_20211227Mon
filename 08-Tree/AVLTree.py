@@ -99,6 +99,13 @@ def searchNode(rootNode, data):
 
 
 
+def getHeight(rootNode: AVLNode) -> int:
+    if not rootNode:
+        return 0 
+
+    return rootNode.height
+
+
     
 avl = AVLNode(10)
 
