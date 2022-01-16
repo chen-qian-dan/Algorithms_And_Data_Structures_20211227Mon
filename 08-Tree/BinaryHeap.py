@@ -33,15 +33,14 @@ def heapifyTreeInsert(rootNode, index, heapType):
         return 
     if heapType == "Min":
         if rootNode.list[index] < rootNode.list[parentIndex]:
-            temp = rootNode.list[parentIndex]
-            rootNode.list[parentIndex] = rootNode.list[index]
-            rootNode.list[index] = temp 
+            rootNode.list[parentIndex], rootNode.list[index] = rootNode.list[index], rootNode.list[parentIndex]
+
         heapifyTreeInsert(rootNode, parentIndex, heapType)
+
     elif heapType == "Max":
         if rootNode.list[index] > rootNode.list[parentIndex]:
-            temp = rootNode.list[parentIndex]
-            rootNode.list[parentIndex] = rootNode.list[index]
-            rootNode.list[index] = temp 
+            rootNode.list[parentIndex], rootNode.list[index] = rootNode.list[index], rootNode.list[parentIndex]
+            
         heapifyTreeInsert(rootNode, parentIndex, heapType)
         
 
@@ -65,28 +64,23 @@ def heapifyTreeExtract(rootNode, index, heapType):
     elif rootNode.heapSize == leftIndex: # only have leftIndex 
         if heapType == "Min":
             if rootNode.list[index] > rootNode.list[leftIndex]:
-                temp = rootNode.list[index]
-                rootNode.list[index] = rootNode.list[leftIndex]
-                rootNode.list[leftIndex] = temp 
+                rootNode.list[index], rootNode.list[leftIndex] = rootNode.list[leftIndex], rootNode.list[index]
+                
             return 
         else:
             if rootNode.list[index] < rootNode.list[leftIndex]:
-                temp = rootNode.list[index]
-                rootNode.list[index] = rootNode.list[leftIndex]
-                rootNode.list[leftIndex] = temp 
+                rootNode.list[index], rootNode.list[leftIndex] = rootNode.list[leftIndex], rootNode.list[index]
             return 
     else:
         if heapType == "Min":
             if rootNode.list[index] > min(rootNode.list[index * 2], rootNode.list[index * 2 + 1]):
                 if rootNode.list[index * 2] < rootNode.list[index * 2 + 1]:
-                    temp = rootNode.list[index]
-                    rootNode.list[index] = rootNode.list[index * 2]
-                    rootNode.list[index * 2] = temp 
+                    rootNode.list[index], rootNode.list[index * 2] = rootNode.list[index * 2], rootNode.list[index]
+                    
                     index = index * 2
                 else:
-                    temp = rootNode.list[index]
-                    rootNode.list[index] = rootNode.list[index * 2 + 1]
-                    rootNode.list[index * 2 + 1] = temp 
+                    rootNode.list[index], rootNode.list[index * 2 + 1] = rootNode.list[index * 2 + 1], rootNode.list[index]
+                    
                     index = index * 2 + 1
                 heapifyTreeExtract(rootNode, index, heapType)
             else:
@@ -95,14 +89,12 @@ def heapifyTreeExtract(rootNode, index, heapType):
         else:
             if rootNode.list[index] < max(rootNode.list[index * 2], rootNode.list[index * 2 + 1]):
                 if rootNode.list[index * 2] > rootNode.list[index * 2 + 1]:
-                    temp = rootNode.list[index]
-                    rootNode.list[index] = rootNode.list[index * 2]
-                    rootNode.list[index * 2] = temp 
+                    rootNode.list[index], rootNode.list[index * 2] = rootNode.list[index * 2], rootNode.list[index]
+                   
                     index = index * 2
                 else:
-                    temp = rootNode.list[index]
-                    rootNode.list[index] = rootNode.list[index * 2 + 1]
-                    rootNode.list[index * 2 + 1] = temp 
+                    rootNode.list[index], rootNode.list[index * 2 + 1] = rootNode.list[index * 2 + 1], rootNode.list[index]
+                    
                     index = index * 2 + 1
 
                 heapifyTreeExtract(rootNode, index, heapType)
