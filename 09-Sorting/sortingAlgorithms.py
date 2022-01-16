@@ -120,14 +120,45 @@ def partition(lst: List[int], low: int, high: int):
     return i + 1
 
 
-
-
-
 def quickSort(lst: List[int], low: int, high: int):
     if low < high:
         pi = partition(lst, low, high)
         quickSort(lst, low, pi - 1)
         quickSort(lst, pi + 1, high)
+
+
+
+# Heap sort ----------------------------------------
+def heapify(lst: List[int], heapSize: int, i: int):
+    l: int = i * 2
+    r: int = l + 1
+    if l < heapSize and lst[l] < lst[i]:
+        lst[l], lst[i] = lst[i], lst[l]
+        heapify(lst, heapSize, l)
+
+    elif r < heapSize and lst[r] < lst[i]:
+        lst[r], lst[i] = lst[i], lst[r]
+        heapify(lst, heapSize, r)
+
+def heapSort(lst: List[int]):
+    n = len(lst)
+    heap = [None] * n 
+    heapSize: int = 0
+    for v in lst:
+        heap.insert(0, v)
+        heapSize += 1
+        heapify(heap, heapSize, 0)
+
+    retLst: List[int] = list()
+    while heapSize > 0:
+        retLst.append(heap[0])
+        heap[0] = heap[heapSize - 1]
+        heapSize -= 1
+        heapify(heap, heapSize, 0)
+
+    return retLst 
+
+
 
     
 lst = [3, 5, 8, 1, 2, 9, 4, 7, 6]
@@ -136,7 +167,8 @@ lst = [3, 5, 8, 1, 2, 9, 4, 7, 6]
 # insertionSort(lst)
 # lst = bucketSort(lst)
 # mergeSort(lst, 0, 4)
-quickSort(lst, 0, len(lst)-1)
+# quickSort(lst, 0, len(lst)-1)
+lst = heapSort(lst)
 print(lst)
 
 
