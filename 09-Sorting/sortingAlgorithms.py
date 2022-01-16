@@ -91,15 +91,52 @@ def mergeSort(lst: List[int], l: int, r: int):
         merge(lst, l, m, r)
 
 
+def partition(lst: List[int], low: int, high: int):
+    pivot: int = lst[high]
+    L: int = low
+    R: int = high - 1
+    while L < high:
+        if lst[L] > pivot:
+            while R > L and lst[R] > pivot:
+                R -= 1
+
+            if L == R:
+                lst[L], lst[high] = lst[high], lst[L]
+                return L
+            else:
+                lst[L], lst[R] = lst[R], lst[L]
+        L += 1
+    return high
+
+
+def partition(lst: List[int], low: int, high: int):
+    i = low - 1
+    pivot = lst[high]
+    for j in range(low, high):
+        if lst[j] <= pivot:
+            i += 1
+            lst[i], lst[j] = lst[j], lst[i]
+    lst[i + 1], lst[high] = lst[high], lst[i + 1]
+    return i + 1
 
 
 
-lst = [5, 4, 3, 2, 1] 
+
+
+def quickSort(lst: List[int], low: int, high: int):
+    if low < high:
+        pi = partition(lst, low, high)
+        quickSort(lst, low, pi - 1)
+        quickSort(lst, pi + 1, high)
+
+    
+lst = [3, 5, 8, 1, 2, 9, 4, 7, 6]
 # bubbleSort(lst)
 # selectionSort(lst)
 # insertionSort(lst)
 # lst = bucketSort(lst)
-mergeSort(lst, 0, 4)
+# mergeSort(lst, 0, 4)
+quickSort(lst, 0, len(lst)-1)
 print(lst)
 
 
