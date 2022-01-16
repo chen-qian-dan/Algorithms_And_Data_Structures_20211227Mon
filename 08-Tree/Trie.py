@@ -51,12 +51,53 @@ class Trie:
             return False 
 
 
+def deleteString(root, word, index):
+    # check if the word in this trie
+    # if yes, then start from the leaf node 
+    # case 1: some other prefix of string is same as the one that we want to delete (API, APPLE)
+    # case 2: word is a prefix of another string (API, APIS)
+    # case 3: other string is a prefix of word(APIS, AP)
+    # case 4: not any node depends on word
+    if not root.searchString(word):
+        print ("The word does not in trie")
+        return 
+
+    ch = word[index]
+    cur = root.children.get(ch)
+    canThisNodeBeDeleted = False 
+
+    if len(cur.children) > 1:
+        deleteString(cur, word, index + 1)
+        return False 
+
+    if index == len(word) - 1:
+        if len(cur.children) >= 1:
+            cur.endOfString = False 
+            return False 
+        else:
+            root.children.pop(ch)
+            return True 
+    if cur.endOfString:
+        deleteString(cur, word, index + 1)
+        return False 
+
+    canThisNodeBeDeleted = deleteString(cur, word, index + 1)
+    if canThisNodeBeDeleted:
+        root.children.pop(ch)
+        return True 
+    else:
+        return False 
+
+    
+
     
 
 
 trie = Trie()
 trie.insertString("App")
 trie.insertString("Appl")
-print(trie.searchString("Ap"))
-print(trie.searchStringVideo("Ap"))
+# print(trie.searchString("Ap"))
+# print(trie.searchStringVideo("Ap"))
+deleteString(trie.root, "App", 0)
+print(trie.searchString("APP"))
 
