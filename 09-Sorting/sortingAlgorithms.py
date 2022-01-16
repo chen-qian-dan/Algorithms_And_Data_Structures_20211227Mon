@@ -46,11 +46,60 @@ def bucketSort(lst: List[int]):
 
 
 
+def merge(lst: List[int], l: int, m: int, r: int):
+    n1: int = m - l + 1
+    n2: int = r - m
+
+    L: List[int] = [0] * n1
+    R: List[int] = [0] * n2
+
+    for i in range(n1):
+        L[i] = lst[l + i]
+
+    for i in range(n2):
+        R[i] = lst[m + i + 1] 
+
+    i = 0
+    j = 0
+    k = l
+    while i < n1 and j < n2:
+        if L[i] <= R[j]:
+            lst[k] = L[i]
+            i += 1
+        else:
+            lst[k] = R[j]
+            j += 1
+        k += 1
+    
+    while i < n1:
+        lst[k] = L[i]
+        k += 1
+        i += 1
+
+    while j < n2:
+        lst[k] = L[j]
+        j += 1
+        k += 1
+
+
+
+def mergeSort(lst: List[int], l: int, r: int):
+    if l < r:
+        m = (l + r ) // 2
+        mergeSort(lst, l, m)
+        mergeSort(lst, m + 1, r)
+        merge(lst, l, m, r)
+
+
+
+
+
 lst = [5, 4, 3, 2, 1] 
 # bubbleSort(lst)
 # selectionSort(lst)
 # insertionSort(lst)
-lst = bucketSort(lst)
+# lst = bucketSort(lst)
+mergeSort(lst, 0, 4)
 print(lst)
 
 
