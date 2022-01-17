@@ -35,15 +35,58 @@ class Graph:
                     q.append(child)
 
 
+    def DFS(self, node):
+        if not self.dict:
+            print("The graph is empty")
+        elif not node in self.dict.keys():
+            print(f"{node} is not in the graph")
+        else:
+            stack = list()
+            visited = list() 
+            stack.append(node)
+            while len(stack) > 0:
+                tempNode = stack.pop()
+                if not tempNode in visited:
+                    print(tempNode)
+                    visited.append(tempNode)
+                    for child in self.dict[tempNode]:
+                        stack.append(child)
+
+        
+
+    
+def DFS(graph: Graph, node, visitedLst):
+    if not graph.dict:
+        print("The graph is empty") 
+        return 
+    if not node in graph.dict.keys():
+        print(f"{node} is not in the graph")
+        return 
+
+    if node in visitedLst:
+        return 
+
+    print(node)
+    visitedLst.append(node)
+    for child in graph.dict[node]:
+        DFS(graph, child, visitedLst)
+
+
+
+
 gDict = {
     "a": ["b", "c"], 
     "b": ["a", "d", "e"],
     "c": ["a", "e"], 
     "d": ["b", "e", "f"], 
-    "e": ["d", "f"], 
+    "e": ["d", "f", "c"], 
     "f": ["d", "e"]
 }
 
 graph = Graph(gDict)
 graph.addEdge("e", "c")
 graph.BFS("a")
+print("DFS----------------------------")
+DFS(graph, "a", [])
+print("DFS----------------------------")
+graph.DFS("a")
