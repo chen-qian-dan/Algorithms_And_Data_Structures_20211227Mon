@@ -16,6 +16,24 @@ class Graph:
         self.dict[node1].append(node2)
 
 
+    def BFS(self, node):
+        if not self.dict:
+            print("The graph is empty") 
+        if not node in self.dict.keys():
+            print(f"{node} is not in the graph")
+            return 
+
+        visited = list()
+        q = list()
+        q.append(node)
+        while len(q) > 0:
+            tempNode = q.pop(0)
+            if not tempNode in visited:
+                visited.append(tempNode)
+                print(tempNode)
+                for child in self.dict[tempNode]:
+                    q.append(child)
+
 
 gDict = {
     "a": ["b", "c"], 
@@ -28,3 +46,4 @@ gDict = {
 
 graph = Graph(gDict)
 graph.addEdge("e", "c")
+graph.BFS("a")
