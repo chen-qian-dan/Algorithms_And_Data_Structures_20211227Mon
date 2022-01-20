@@ -29,3 +29,18 @@ def numberFactor(n: int, numbers: List[int]):
 numbers = [1, 3, 4]
 print(numberFactor(4, numbers))
 
+
+def numberFactorVideo(n: int, numbers: List[int]) -> int:
+    if n < 0:
+        return 0
+    if n in [0, 1, 2]:
+        return 1
+
+    a = 0
+    for v in numbers:
+        a += numberFactorVideo(n - v, numbers)
+    return a
+
+
+print(numberFactorVideo(4, numbers))
+
