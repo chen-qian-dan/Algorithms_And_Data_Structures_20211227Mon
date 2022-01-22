@@ -26,10 +26,11 @@ def minConvertString(s1: str, s2: str, index1: int, index2: int) -> int:
     2. insert(0, s1[0])
     3. replace with s1[0]
     """
-    if len(s1) == 0:
-        return len(s2)
-    if len(s2) == 0:
-        return len(s1)
+    # this part is no need
+    # if len(s1) == 0:
+    #     return len(s2)
+    # if len(s2) == 0:
+    #     return len(s1) 
 
     if index1 >= len(s1):
         return len(s2) - index2
@@ -46,7 +47,7 @@ def minConvertString(s1: str, s2: str, index1: int, index2: int) -> int:
     
     return min(d, i, r)
 
-s1 = "table"
+s1 = ""
 s2 = "tbres" # expect 3
 
 print(minConvertString(s1, s2, 0, 0))
