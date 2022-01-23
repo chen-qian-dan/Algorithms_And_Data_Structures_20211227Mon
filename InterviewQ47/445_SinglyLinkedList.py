@@ -91,8 +91,10 @@ class SinglyLinkedList:
             return False 
 
         node = Node(data)
-
-        if index == 0:
+        if self.length == 0 and index == 0:
+            self.head = node 
+            self.tail = node 
+        elif index == 0:
             node.next = self.head
             self.head = node 
         elif index == self.length:
