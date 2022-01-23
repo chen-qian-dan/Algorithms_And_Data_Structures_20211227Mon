@@ -74,28 +74,53 @@ class SinglyLinkedList:
         self.tail = node 
         self.length -= 1
         return retNode
+
+    def get(self, index: int) -> Node:
+        if index >= self.length:
+            return Node(None)
+        i = 0
+        node = self.head
+        while i < index:
+            node = node.next 
+            i += 1
+        return node 
             
 
 
+# print("push -----------------------------------")
+# singlyLinkedList = SinglyLinkedList()
+# singlyLinkedList.push(5)    # Success
+# print(singlyLinkedList.length)     # 1
+# print(singlyLinkedList.head.val)   # 5
+# print(singlyLinkedList.tail.val)   # 5
+
+# singlyLinkedList.push(10)   # Success
+# print(singlyLinkedList.length)     # 2
+# print(singlyLinkedList.head.val)   # 5
+# print(singlyLinkedList.head.next.val)  # 10
+# print(singlyLinkedList.tail.val)  # 10
+
+# print("pop -----------------------------------")
+# print(singlyLinkedList.pop().val)  # 10
+# print(singlyLinkedList.tail.val)   # 5
+# print(singlyLinkedList.length)     # 1
+# print(singlyLinkedList.pop().val)  # 5
+# print(singlyLinkedList.length)     # 0
+# print(singlyLinkedList.pop())      # Undefined
+
+
+print("get ---------------------------")
 singlyLinkedList = SinglyLinkedList()
-singlyLinkedList.push(5)    # Success
-print(singlyLinkedList.length)     # 1
-print(singlyLinkedList.head.val)   # 5
-print(singlyLinkedList.tail.val)   # 5
+singlyLinkedList.push(5)     # Success
+singlyLinkedList.push(10)     # Success
+singlyLinkedList.push(15)     # Success
+singlyLinkedList.push(20)     # Success
 
-singlyLinkedList.push(10)   # Success
-print(singlyLinkedList.length)     # 2
-print(singlyLinkedList.head.val)   # 5
-print(singlyLinkedList.head.next.val)  # 10
-print(singlyLinkedList.tail.val)  # 10
-
-print("-----------------------------------")
-print(singlyLinkedList.pop().val)  # 10
-print(singlyLinkedList.tail.val)   # 5
-print(singlyLinkedList.length)     # 1
-print(singlyLinkedList.pop().val)  # 5
-print(singlyLinkedList.length)     # 0
-print(singlyLinkedList.pop())      # Undefined
+print(singlyLinkedList.get(0).val)     # 5
+print(singlyLinkedList.get(1).val)    # 10
+print(singlyLinkedList.get(2).val)     # 15
+print(singlyLinkedList.get(3).val)     # 20
+print(singlyLinkedList.get(4).val)     # None
 
 
             
