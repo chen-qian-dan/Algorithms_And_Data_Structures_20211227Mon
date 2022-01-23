@@ -85,6 +85,32 @@ class SinglyLinkedList:
             node = node.next 
             i += 1
         return node 
+
+    def insert(self, index, data):
+        if index < 0 or index > self.length:
+            return False 
+
+        node = Node(data)
+
+        if index == 0:
+            node.next = self.head
+            self.head = node 
+        elif index == self.length:
+            self.tail.next = node 
+            self.tail = node 
+        else:
+            curNode = self.head 
+            i = 0
+            while i < index - 1:
+                curNode = curNode.next 
+                i += 1
+
+            node.next = curNode.next 
+            curNode.next = node 
+        self.length += 1
+        return True 
+
+
             
 
 
@@ -110,18 +136,41 @@ class SinglyLinkedList:
 # print(singlyLinkedList.pop())      # Undefined
 
 
-print("get ---------------------------")
+# print("get ---------------------------")
+# singlyLinkedList = SinglyLinkedList()
+# singlyLinkedList.push(5)     # Success
+# singlyLinkedList.push(10)     # Success
+# singlyLinkedList.push(15)     # Success
+# singlyLinkedList.push(20)     # Success
+
+# print(singlyLinkedList.get(0).val)     # 5
+# print(singlyLinkedList.get(1).val)    # 10
+# print(singlyLinkedList.get(2).val)     # 15
+# print(singlyLinkedList.get(3).val)     # 20
+# print(singlyLinkedList.get(4).val)     # None
+
+
+print("insert ---------------------------")
 singlyLinkedList = SinglyLinkedList()
 singlyLinkedList.push(5)     # Success
 singlyLinkedList.push(10)     # Success
 singlyLinkedList.push(15)     # Success
 singlyLinkedList.push(20)     # Success
 
-print(singlyLinkedList.get(0).val)     # 5
-print(singlyLinkedList.get(1).val)    # 10
-print(singlyLinkedList.get(2).val)     # 15
-print(singlyLinkedList.get(3).val)     # 20
-print(singlyLinkedList.get(4).val)     # None
+print(singlyLinkedList.insert(1, 12))       # True
+print(singlyLinkedList.insert(100, 12))     # False
+print(singlyLinkedList.length)              # 5
+print(singlyLinkedList.head.val)            # 5
+print(singlyLinkedList.head.next.val)       # 10
+print(singlyLinkedList.head.next.next.val)       # 12
+print(singlyLinkedList.head.next.next.next.val)       # 15
+print(singlyLinkedList.head.next.next.next.next.val)       # 20
+
+print(singlyLinkedList.insert(5, 25)) # True
+print(singlyLinkedList.head.next.next.next.next.next.val)       # 25
+print(singlyLinkedList.tail.val) # 25
+
+
 
 
             
