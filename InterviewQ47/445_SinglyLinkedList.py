@@ -76,7 +76,8 @@ class SinglyLinkedList:
         return retNode
 
     def get(self, index: int) -> Node:
-        if index >= self.length:
+        
+        if index >= self.length or index < 0:
             return Node(None)
         i = 0
         node = self.head
