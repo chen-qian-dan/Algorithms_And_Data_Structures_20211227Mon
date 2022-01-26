@@ -20,6 +20,31 @@ def sortedFrequency(arr, num):
 
 # Divide and Conquer - sortedFrequency
 import math
+def sortedFrequencyVideo(arr, num):
+    if len(arr) == 0:
+        return -1
+    i = 0
+    j = len(arr) - 1
+
+    while i <= j:
+        mid = (i + j) // 2
+        if arr[mid] == num:
+            i = mid
+            j = mid
+            while i > 0 and arr[i - 1] == num:
+                i -= 1
+            while j < len(arr) - 1 and arr[j + 1] == num:
+                j += 1
+            return j - i + 1
+
+        if arr[mid] < num:
+            i = mid + 1
+        else:
+            j = mid + 1
+    return -1
+
+
+
 
 def sortedFrequency(arr, num):
     # TODO
