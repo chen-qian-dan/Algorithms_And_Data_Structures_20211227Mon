@@ -18,7 +18,7 @@ def findMaxProductOfTwo(lst: List[int]) -> int:
     return nMin * nMax
 
 
-lst: List[int] = [1, 20, 3, 4, 11, 5]
+lst: List[int] = [1, 20, 30, 44, 5, 56, 57, 8, 9, 10, 31, 12, 13, 14, 35, 16, 27, 58, 19, 21] # 57 * 58 = 3306
 
 
 print(findMaxProductOfTwo(lst))
