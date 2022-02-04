@@ -11,7 +11,7 @@ def middle(lst):
         return None 
     if len(lst) < 3:
         raise ValueError("len of list must >= 3")
-    newLst = list(lst[1:-1])
+    newLst = lst[1:-1]
     return newLst
 
 
