@@ -14,5 +14,7 @@ dsa[2] = ("10.7", "LeetCode 48")
 
 
 algorithms = dict()
-algorithms[0] = {15, "LeetCode 283"}
+algorithms[0] = (15, "LeetCode 283", "Move zeros")
+algorithms[1] = (21, "LeetCode 881", "Boats to Save People")
+algorithms[2] = (26, "LeetCode 941", "Valid Mountain Array")
 
