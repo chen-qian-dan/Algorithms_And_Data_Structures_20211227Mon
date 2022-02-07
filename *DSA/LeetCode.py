@@ -9,9 +9,9 @@ Algorithms:
 
 
 dsa = dict()
-dsa[0] =  ("10.2", "LeetCode 1")
-dsa[1] = ("10.5", "LeetCode 217")
-dsa[2] = ("10.7", "LeetCode 48")
+dsa[0] =  ("10.2", "LeetCode 1 - Two sum")
+dsa[1] = ("10.5", "LeetCode 217 - Contains Duplicate")
+dsa[2] = ("10.7", "LeetCode 48 - Rotate Image")
 
 
 algorithms = dict()
@@ -28,5 +28,6 @@ algorithms[9] = (65, "LeetCode 136", "Single number")
 algorithms[10] = (71, "LeetCode 657", "Robot return to origin")
 algorithms[11] = (74, "LeetCode 67", "Add Binary")
 algorithms[12] = (84, "LeetCode 1", "Two sum")
+algorithms[12] = (91, "LeetCode 217", "Contains Duplicate")
 
 
