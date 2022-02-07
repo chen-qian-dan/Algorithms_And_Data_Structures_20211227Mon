@@ -24,5 +24,9 @@ algorithms[5] = (41, "LeetCode 34", "Find first and last position of element in 
 algorithms[6] = (48, "LeetCode 278", "First bad version")
 algorithms[7] = (53, "LeetCode 268", "Missing number")
 algorithms[8] = (59, "LeetCode 204", "Count Primes")
+algorithms[9] = (65, "LeetCode 136", "Single number")
+algorithms[10] = (71, "LeetCode 657", "Robot return to origin")
+algorithms[11] = (74, "LeetCode 67", "Add Binary")
+algorithms[12] = (84, "LeetCode 1", "Two sum")
 
 
