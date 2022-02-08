@@ -29,5 +29,9 @@ algorithms[10] = (71, "LeetCode 657", "Robot return to origin")
 algorithms[11] = (74, "LeetCode 67", "Add Binary")
 algorithms[12] = (84, "LeetCode 1", "Two sum")
 algorithms[13] = (91, "LeetCode 217", "Contains Duplicate")
+algorithms[14] = (94, "LeetCode 169", "Majority Element")
+algorithms[15] = (97, "LeetCode 49", "Group Anagrams")
+algorithms[16] = (100, "LeetCode 454", "4Sum II")
+algorithms[16] = (105, "LeetCode 146", "LRU Cache")  # not yet solved
 
 
