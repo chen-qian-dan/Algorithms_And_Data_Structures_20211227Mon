@@ -32,6 +32,7 @@ algorithms[13] = (91, "LeetCode 217", "Contains Duplicate")
 algorithms[14] = (94, "LeetCode 169", "Majority Element")
 algorithms[15] = (97, "LeetCode 49", "Group Anagrams")
 algorithms[16] = (100, "LeetCode 454", "4Sum II")
-algorithms[16] = (105, "LeetCode 146", "LRU Cache")  # not yet solved
+algorithms[17] = (105, "LeetCode 146", "LRU Cache") 
+algorithms[18] = (113, "LeetCode 76", "Minimum Window Substring")  
 
 
