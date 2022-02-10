@@ -34,6 +34,12 @@ algorithms[15] = (97, "LeetCode 49", "Group Anagrams")
 algorithms[16] = (100, "LeetCode 454", "4Sum II")
 algorithms[17] = (105, "LeetCode 146", "LRU Cache") 
 algorithms[18] = (113, "LeetCode 76", "Minimum Window Substring")
-algorithms[19] = (123, "LeetCode 21", "Merge Two sorted lists")  
+algorithms[19] = (123, "LeetCode 21", "Merge Two sorted lists") 
+algorithms[20] = (126, "LeetCode 141", "Linked List Cycle")  
+algorithms[21] = (129, "LeetCode 206", "Reverse Linked List")
+algorithms[22] = (132, "LeetCode 2", "Add Two Numbers")
+algorithms[23] = (135, "LeetCode 19", "Remove Nth Node From End of List")
+algorithms[24] = (138, "LeetCode 328", "Odd Even Linked List")
+algorithms[25] = (141, "LeetCode 23", "Merge K Sorted Lists")
 
 
