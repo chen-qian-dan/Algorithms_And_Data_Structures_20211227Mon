@@ -40,6 +40,6 @@ algorithms[21] = (129, "LeetCode 206", "Reverse Linked List")
 algorithms[22] = (132, "LeetCode 2", "Add Two Numbers")
 algorithms[23] = (135, "LeetCode 19", "Remove Nth Node From End of List")
 algorithms[24] = (138, "LeetCode 328", "Odd Even Linked List")
-algorithms[25] = (141, "LeetCode 23", "Merge K Sorted Lists")
+algorithms[25] = (141, "LeetCode 23", "Merge K Sorted Lists")  # not finished yet
 
 
