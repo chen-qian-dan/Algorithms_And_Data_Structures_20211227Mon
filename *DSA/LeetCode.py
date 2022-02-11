@@ -41,5 +41,8 @@ algorithms[22] = (132, "LeetCode 2", "Add Two Numbers")
 algorithms[23] = (135, "LeetCode 19", "Remove Nth Node From End of List")
 algorithms[24] = (138, "LeetCode 328", "Odd Even Linked List")
 algorithms[25] = (141, "LeetCode 23", "Merge K Sorted Lists")  # not finished yet
+algorithms[26] = (143, "LeetCode 78", "Subsets")
+algorithms[27] = (145, "LeetCode 17", "Letter Combinations of a Phone Number")
+algorithms[28] = (147, "LeetCode 79", "Word Search")
 
 
