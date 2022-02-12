@@ -83,6 +83,9 @@ class SinglyLinkedList:
                 cur = cur.next 
             if cur.next is None:
                 print("The value is not in the list")
+            elif cur.next == self.tail:
+                cur.next = None 
+                self.tail = cur 
             else:
                 cur.next = cur.next.next 
 
@@ -114,23 +117,19 @@ class SinglyLinkedList:
         self.tail = None 
 
 
-        
-
-
-
-
+    
 
 sll = SinglyLinkedList()
 sll.insert(0, 1)
 sll.insert(3, 2)
-sll.insert(3, 3)
-print(sll)
-sll.insert(5, 4)
-print(sll)
-sll.traverse()
-print(sll.search(1))
+# sll.insert(3, 3)
+# print(sll)
+# sll.insert(5, 4)
+# print(sll)
+# sll.traverse()
+# print(sll.search(1))
 
 print(sll)
-# sll.deleteByVale(5)
-sll.deleteByIndex(5)
+sll.deleteByValue(1)
+# sll.deleteByIndex(5)
 print(sll)
