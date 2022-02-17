@@ -21,6 +21,14 @@ def inOrder_traverse(node: Node): # time O(n), space O(n)
     ret.extend(inOrder_traverse(node.rightChild)) # time O(n/2)
     return ret 
 
+def postOrder_traverse(node: Node): # time O(n), space O(n)
+    if node is None:
+        return []
+    ret = postOrder_traverse(node.leftChild) # time O(n/2)
+    ret.extend(postOrder_traverse(node.rightChild)) # time O(n/2)
+    ret.append(node.val)
+    return ret 
+
 
 
 
@@ -29,4 +37,5 @@ root.leftChild = Node(2)
 root.rightChild = Node(3)
 print(preOrder_traverse(root))
 print(inOrder_traverse(root))
+print(postOrder_traverse(root))
 
