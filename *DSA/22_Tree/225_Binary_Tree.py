@@ -50,6 +50,22 @@ def levelOrder_traverse(node: Node): # time O(n), space O(n)
     return list(ret)
 
 
+def searchNode(root: Node, node: Node) -> bool:
+    if root is None:
+        return False 
+    q = deque()
+    q.append(root)
+    while len(q) > 0:
+        n = q.popleft()
+        if n.val == node.val:
+            return True 
+        if n.leftChild:
+            q.append(n.leftChild)
+        if n.rightChild:
+            q.append(n.rightChild)
+    return False 
+
+
 
 
 root = Node(1)
@@ -59,4 +75,6 @@ print(preOrder_traverse(root))
 print(inOrder_traverse(root))
 print(postOrder_traverse(root))
 print(levelOrder_traverse(root))
+
+print(searchNode(root, Node(20)))
 
