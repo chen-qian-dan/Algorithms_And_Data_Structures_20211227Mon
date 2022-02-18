@@ -66,6 +66,30 @@ def searchNode(root: Node, node: Node) -> bool:
     return False 
 
 
+def insertNode(root: Node, val):
+    newNode = Node(val)
+    if root is None:
+        root = newNode
+    else:
+        q = deque()
+        q.append(root)
+        while len(q) > 0:
+            node = q.popleft()
+            if node.leftChild is None:
+                node.leftChild = newNode 
+                break 
+            else:
+                q.append(node.leftChild)
+            if node.rightChild is None:
+                node.rightChild = newNode 
+                break 
+            else:
+                q.append(node.rightChild)
+
+
+
+
+
 
 
 root = Node(1)
@@ -77,4 +101,8 @@ print(postOrder_traverse(root))
 print(levelOrder_traverse(root))
 
 print(searchNode(root, Node(20)))
+
+insertNode(root, 20)
+print(levelOrder_traverse(root))
+
 
