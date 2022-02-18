@@ -1,3 +1,6 @@
+from collections import deque 
+
+
 class Node:
     def __init__(self, val):
         self.val = val 
@@ -30,6 +33,23 @@ def postOrder_traverse(node: Node): # time O(n), space O(n)
     return ret 
 
 
+def levelOrder_traverse(node: Node): # time O(n), space O(n)
+    if node is None:
+        return []
+    ret = deque()
+    q = deque() 
+    q.append(node)
+    while len(q) > 0:
+        n = q.popleft()
+        ret.append(n.val)
+        if n.leftChild is not None:
+            q.append(n.leftChild)
+        if n.rightChild is not None:
+            q.append(n.rightChild)
+        
+    return list(ret)
+
+
 
 
 root = Node(1)
@@ -38,4 +58,5 @@ root.rightChild = Node(3)
 print(preOrder_traverse(root))
 print(inOrder_traverse(root))
 print(postOrder_traverse(root))
+print(levelOrder_traverse(root))
 
