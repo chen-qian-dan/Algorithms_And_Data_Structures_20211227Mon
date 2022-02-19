@@ -69,7 +69,27 @@ class Binary_Tree:
     def levelOrder_traverse(self, rootIndex: int) -> list(): # time O(n), space O(n)
         if rootIndex > self.lastUsedIndex:
             return [] 
-        return self.items[rootIndex:] # by val 
+        return self.items[rootIndex: self.lastUsedIndex+1] # by val 
+
+    
+    def deleteNode(self, val) -> None: # time O(n), space O(1)
+        if self.lastUsedIndex == 0:
+            print("The tree is empty")
+        else:
+            bExist = False 
+            for i in range(1, self.lastUsedIndex + 1):
+                if self.items[i] == val:
+                    self.items[i] = self.items[self.lastUsedIndex]
+                    self.items[self.lastUsedIndex] = None 
+                    bExist = True 
+                    self.lastUsedIndex -= 1
+                    break 
+
+            if bExist is False:
+                print("The val is not in the tree")
+            else:
+                print("Delete it successfully")
+
         
 
 
@@ -83,6 +103,10 @@ tree.insertNode(5)
 print(tree)
 tree.searchNode(1)
 
-print(tree.preOrder_traverse(1))
-print(tree.inOrder_traverse(1))
-print(tree.postOrder_traverse(1))
+# print(tree.preOrder_traverse(1))
+# print(tree.inOrder_traverse(1))
+# print(tree.postOrder_traverse(1))
+print(tree.levelOrder_traverse(1))
+tree.deleteNode(6)
+print(tree.levelOrder_traverse(1))
+
