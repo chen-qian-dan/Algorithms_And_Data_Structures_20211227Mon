@@ -27,7 +27,7 @@ def preOrder_traverse(root: Node) -> list(): # time: O(n), space O(n)
     return ret 
 
 
-def inOrder_traverse(root: Node) -> list():
+def inOrder_traverse(root: Node) -> list(): # time: O(n), space O(n)
     if root is None:
         return []
     ret = list()
@@ -36,6 +36,17 @@ def inOrder_traverse(root: Node) -> list():
     ret.extend(inOrder_traverse(root.rightChild))
     return ret 
 
+def postOrder_traverse(root: Node) -> list(): # time: O(n), space O(n)
+    if root is None:
+        return []
+    ret = list()
+    ret.extend(postOrder_traverse(root.leftChild))
+    ret.extend(postOrder_traverse(root.rightChild))
+    ret.append(root.val)
+    return ret 
+
+
+
 
 root = Node(10)
 insertNode(root, 2)
@@ -43,3 +54,4 @@ insertNode(root, 3)
 insertNode(root, 12)
 print(preOrder_traverse(root))
 print(inOrder_traverse(root))
+print(postOrder_traverse(root))
