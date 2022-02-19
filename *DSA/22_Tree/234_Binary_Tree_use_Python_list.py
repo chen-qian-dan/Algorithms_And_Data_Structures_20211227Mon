@@ -57,7 +57,7 @@ class Binary_Tree:
         ret.extend(self.inOrder_traverse(rootIndex * 2 + 1))
         return ret 
 
-    def postOrder_traverse(self, rootIndex: int) -> list():
+    def postOrder_traverse(self, rootIndex: int) -> list(): # time O(n), space O(n)
         if rootIndex > self.lastUsedIndex:
             return [] 
         ret = list()
@@ -65,6 +65,11 @@ class Binary_Tree:
         ret.extend(self.postOrder_traverse(rootIndex * 2 + 1))
         ret.append(self.items[rootIndex])
         return ret 
+
+    def levelOrder_traverse(self, rootIndex: int) -> list(): # time O(n), space O(n)
+        if rootIndex > self.lastUsedIndex:
+            return [] 
+        return self.items[rootIndex:] # by val 
         
 
 
