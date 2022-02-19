@@ -61,13 +61,33 @@ def levelOrder_traverse(root: Node) -> list(): # time: O(n), space O(n)
     return ret 
 
 
+def searchNode(root: Node, val) -> None:  # time: O(n), space O(n)
+    if root is None:
+        print("The tree is empty")
+    else:
+        q = deque()
+        q.append(root)
+        while len(q) > 0:
+            node = q.popleft()
+            if node.val == val:
+                print("True")
+                return  
+            else:
+                if node.leftChild:
+                    q.append(node.leftChild)
+                if node.rightChild:
+                    q.append(node.rightChild)
+        print("The val is not in the tree")
+
+
 
 
 root = Node(10)
 insertNode(root, 2)
 insertNode(root, 3)
 insertNode(root, 12)
-print(preOrder_traverse(root))
-print(inOrder_traverse(root))
-print(postOrder_traverse(root))
+# print(preOrder_traverse(root))
+# print(inOrder_traverse(root))
+# print(postOrder_traverse(root))
 print(levelOrder_traverse(root))
+searchNode(root, 10)
