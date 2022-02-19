@@ -56,6 +56,15 @@ class Binary_Tree:
         ret.append(self.items[rootIndex])
         ret.extend(self.inOrder_traverse(rootIndex * 2 + 1))
         return ret 
+
+    def postOrder_traverse(self, rootIndex: int) -> list():
+        if rootIndex > self.lastUsedIndex:
+            return [] 
+        ret = list()
+        ret.extend(self.postOrder_traverse(rootIndex * 2))
+        ret.extend(self.postOrder_traverse(rootIndex * 2 + 1))
+        ret.append(self.items[rootIndex])
+        return ret 
         
 
 
@@ -71,3 +80,4 @@ tree.searchNode(1)
 
 print(tree.preOrder_traverse(1))
 print(tree.inOrder_traverse(1))
+print(tree.postOrder_traverse(1))
