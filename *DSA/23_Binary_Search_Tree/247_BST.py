@@ -27,10 +27,19 @@ def preOrder_traverse(root: Node) -> list(): # time: O(n), space O(n)
     return ret 
 
 
+def inOrder_traverse(root: Node) -> list():
+    if root is None:
+        return []
+    ret = list()
+    ret.extend(inOrder_traverse(root.leftChild))
+    ret.append(root.val)
+    ret.extend(inOrder_traverse(root.rightChild))
+    return ret 
+
 
 root = Node(10)
 insertNode(root, 2)
 insertNode(root, 3)
 insertNode(root, 12)
 print(preOrder_traverse(root))
-# print(inOrder_traverse(root))
+print(inOrder_traverse(root))
