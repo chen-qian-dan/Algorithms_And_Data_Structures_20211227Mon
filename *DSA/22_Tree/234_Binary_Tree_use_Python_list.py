@@ -38,13 +38,23 @@ class Binary_Tree:
             print("The val is not in the tree") 
 
     
-    def preOrder_traverse(self, rootIndex: int) -> list():
+    def preOrder_traverse(self, rootIndex: int) -> list(): # time O(n), space O(n)
         if rootIndex > self.lastUsedIndex:
             return []
         ret = list()
         ret.append(self.items[rootIndex])
         ret.extend(self.preOrder_traverse(rootIndex * 2))
         ret.extend(self.preOrder_traverse(rootIndex * 2 + 1))
+        return ret 
+
+
+    def inOrder_traverse(self, rootIndex: int) -> list(): # time O(n), space O(n)
+        if rootIndex > self.lastUsedIndex:
+            return []
+        ret = list()
+        ret.extend(self.inOrder_traverse(rootIndex * 2))
+        ret.append(self.items[rootIndex])
+        ret.extend(self.inOrder_traverse(rootIndex * 2 + 1))
         return ret 
         
 
@@ -60,3 +70,4 @@ print(tree)
 tree.searchNode(1)
 
 print(tree.preOrder_traverse(1))
+print(tree.inOrder_traverse(1))
