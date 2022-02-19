@@ -226,7 +226,7 @@ def deleteNodeBT(rootNode, data):
 
 
 
-def deleteDeepestNode(rootNode):
+def deleteDeepestNode(rootNode):  # bugs: how about rootNode itself if the deepest node?
     if not rootNode:
         return 
     deepestNode = getDeepestNode(rootNode) # return by ref
@@ -257,15 +257,15 @@ def deleteBT(rootNode):
     return "The tree is deleted successfully"
 
 
-
+tree = TreeNode("Drinks")
 levelOrderTraversal(tree)
 print("---------------------")
 # deleteDeepestNode(tree)
-deleteNodeBT(tree, "Tea")
+print(deleteNodeBT(tree, "Drinks"))
 
 levelOrderTraversal(tree)
-deleteBT(tree)
-levelOrderTraversal(tree)
+# deleteBT(tree)
+# levelOrderTraversal(tree)
 
 
                  
