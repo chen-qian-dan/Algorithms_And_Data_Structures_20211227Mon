@@ -66,7 +66,7 @@ def searchNode(root: Node, node: Node) -> bool:
     return False 
 
 
-def insertNode(root: Node, val):
+def insertNode(root: Node, val): # by ref
     newNode = Node(val)
     if root is None:
         root = newNode
@@ -85,6 +85,8 @@ def insertNode(root: Node, val):
                 break 
             else:
                 q.append(node.rightChild)
+
+    return root 
 
 
 
@@ -182,15 +184,15 @@ def deleteTree(root: Node):
 root = Node(1)
 root.leftChild = Node(2)
 root.rightChild = Node(3)
-insertNode(root, 4)
-insertNode(root, 5)
-insertNode(root, 6)
+root = insertNode(root, 4)
+root = insertNode(root, 5)
+root = insertNode(root, 6)
 
 print(levelOrder_traverse(root))
-deleteNode(root, 1)
+root = deleteNode(root, 1)
 print(levelOrder_traverse(root))
-root = deleteTree(root)
-print(levelOrder_traverse(root))
+# root = deleteTree(root)
+# print(levelOrder_traverse(root))
 
 # print(inOrder_traverse(root))
 # print(postOrder_traverse(root))
@@ -198,7 +200,7 @@ print(levelOrder_traverse(root))
 
 # print(searchNode(root, Node(20)))
 
-# insertNode(root, 20)
+root = insertNode(root, 20)
 # print(levelOrder_traverse(root))
 
 
