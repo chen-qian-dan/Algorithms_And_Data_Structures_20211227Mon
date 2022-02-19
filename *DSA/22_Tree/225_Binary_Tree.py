@@ -10,7 +10,7 @@ class Node:
 
 def preOrder_traverse(node: Node): # time O(n), space O(n)
     if node is None:
-        return [] 
+        return None 
     ret = [node.val]
     ret.extend(preOrder_traverse(node.leftChild)) # time O(n/2)
     ret.extend(preOrder_traverse(node.rightChild)) # time O(n/2)
@@ -18,7 +18,7 @@ def preOrder_traverse(node: Node): # time O(n), space O(n)
 
 def inOrder_traverse(node: Node): # time O(n), space O(n)
     if node is None:
-        return []
+        return None
     ret = inOrder_traverse(node.leftChild) # time O(n/2)
     ret.append(node.val)
     ret.extend(inOrder_traverse(node.rightChild)) # time O(n/2)
@@ -26,7 +26,7 @@ def inOrder_traverse(node: Node): # time O(n), space O(n)
 
 def postOrder_traverse(node: Node): # time O(n), space O(n)
     if node is None:
-        return []
+        return None
     ret = postOrder_traverse(node.leftChild) # time O(n/2)
     ret.extend(postOrder_traverse(node.rightChild)) # time O(n/2)
     ret.append(node.val)
@@ -35,7 +35,7 @@ def postOrder_traverse(node: Node): # time O(n), space O(n)
 
 def levelOrder_traverse(node: Node): # time O(n), space O(n)
     if node is None:
-        return []
+        return None 
     ret = deque()
     q = deque() 
     q.append(node)
@@ -164,7 +164,19 @@ def getDeepestNode(root: Node):
             q.append(node.leftChild)
         if node.rightChild:
             q.append(node.rightChild)
-    return node 
+    return node
+
+
+def deleteTree(root: Node): 
+    """
+    root = None 
+    root.leftChild = None 
+    root.rightChild = None
+    """ 
+    root.leftChild = None
+    root.rightChild = None 
+    root.val = None 
+    return None 
 
 
 root = Node(1)
@@ -177,6 +189,9 @@ insertNode(root, 6)
 print(levelOrder_traverse(root))
 deleteNode(root, 1)
 print(levelOrder_traverse(root))
+root = deleteTree(root)
+print(levelOrder_traverse(root))
+
 # print(inOrder_traverse(root))
 # print(postOrder_traverse(root))
 # print(levelOrder_traverse(root))
