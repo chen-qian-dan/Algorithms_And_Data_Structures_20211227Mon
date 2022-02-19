@@ -45,6 +45,21 @@ def postOrder_traverse(root: Node) -> list(): # time: O(n), space O(n)
     ret.append(root.val)
     return ret 
 
+def levelOrder_traverse(root: Node) -> list(): # time: O(n), space O(n)
+    if root is None:
+        return []
+    ret = list()
+    q = deque()
+    q.append(root)
+    while len(q) > 0:
+        node = q.popleft()
+        ret.append(node.val)
+        if node.leftChild:
+            q.append(node.leftChild)
+        if node.rightChild:
+            q.append(node.rightChild)
+    return ret 
+
 
 
 
@@ -55,3 +70,4 @@ insertNode(root, 12)
 print(preOrder_traverse(root))
 print(inOrder_traverse(root))
 print(postOrder_traverse(root))
+print(levelOrder_traverse(root))
