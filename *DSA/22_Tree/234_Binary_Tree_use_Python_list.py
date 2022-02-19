@@ -90,6 +90,14 @@ class Binary_Tree:
             else:
                 print("Delete it successfully")
 
+
+    def deleteTree(self): # time O(1), space O(1)
+        """
+        ???
+        is this delete the tree?
+        """
+        self.items = None 
+
         
 
 
