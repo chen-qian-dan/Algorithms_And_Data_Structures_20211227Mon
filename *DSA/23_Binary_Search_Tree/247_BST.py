@@ -61,7 +61,7 @@ def levelOrder_traverse(root: Node) -> list(): # time: O(n), space O(n)
     return ret 
 
 
-def searchNode(root: Node, val) -> None:  # time: O(n), space O(n)
+def searchNode(root: Node, val) -> None:  # time: O(n), space O(n), this is for binary tree, not efficient for BST
     if root is None:
         print("The tree is empty")
     else:
@@ -80,6 +80,25 @@ def searchNode(root: Node, val) -> None:  # time: O(n), space O(n)
         print("The val is not in the tree")
 
 
+def searchNodeInBST(root: Node, val) -> None: 
+    if root is None:
+        print("The tree is empty")
+    elif root.val == val:
+        print("True")
+    elif val <= root.val:
+        if root.leftChild is None:
+            print("The val is not in the Tree")
+        else:
+            searchNodeInBST(root.leftChild, val)
+    else:
+        if root.rightChild is None:
+            print("The val is not in the tree")
+        else:
+            searchNodeInBST(root.rightChild, val)
+
+
+
+
 
 
 root = Node(10)
@@ -90,4 +109,5 @@ insertNode(root, 12)
 # print(inOrder_traverse(root))
 # print(postOrder_traverse(root))
 print(levelOrder_traverse(root))
-searchNode(root, 10)
+# searchNode(root, 10)
+searchNodeInBST(root, 123)
