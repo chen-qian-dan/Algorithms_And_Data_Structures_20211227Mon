@@ -17,7 +17,7 @@ def insertNode(root: Node, val): # time O(logN), space O(logN)
     return root 
 
 
-def preOrder_traverse(root: Node) -> list():
+def preOrder_traverse(root: Node) -> list(): # time: O(n), space O(n)
     if root is None:
         return []
     ret = list()
@@ -30,4 +30,7 @@ def preOrder_traverse(root: Node) -> list():
 
 root = Node(10)
 insertNode(root, 2)
+insertNode(root, 3)
+insertNode(root, 12)
 print(preOrder_traverse(root))
+# print(inOrder_traverse(root))
