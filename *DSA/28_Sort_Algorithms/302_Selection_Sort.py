@@ -7,7 +7,7 @@ def selection_sort(lst: List[int]): # by ref
     else:
         for l in range(0, len(lst)):
             minIndex = l
-            for r in range(l, len(lst)):
+            for r in range(l + 1, len(lst)):
                 if lst[r] < lst[minIndex]:
                     minIndex = r
             lst[l], lst[minIndex] = lst[minIndex], lst[l]
