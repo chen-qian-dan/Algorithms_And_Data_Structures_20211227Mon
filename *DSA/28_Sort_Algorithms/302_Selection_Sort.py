@@ -1,7 +1,7 @@
 
 from typing import List 
 
-def selection_sort(lst: List[int]): # by ref 
+def selection_sort(lst: List[int]): # by ref time O(n^2), space O(1)
     if len(lst) <= 1:
         pass 
     else:
