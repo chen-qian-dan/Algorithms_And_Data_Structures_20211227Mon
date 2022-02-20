@@ -10,12 +10,11 @@ def bubble_sort(lst: List[int]): # by ref
         for i in range(0, j):
             if lst[i] > lst[i + 1]:
                 lst[i], lst[i + 1] = lst[i + 1], lst[i]
-    return lst
 
 
 lst = [3, 5, 8, 1, 2, 9, 4, 7, 6]
 lst = [3]
-a = bubble_sort(lst)
+bubble_sort(lst)
 
-print(a)
+print(lst)
         
