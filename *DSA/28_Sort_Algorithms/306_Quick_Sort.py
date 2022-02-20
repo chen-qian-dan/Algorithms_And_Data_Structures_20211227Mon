@@ -1,7 +1,7 @@
 
 from typing import List 
 
-def quick_sort(lst: List[int], l: int, h: int):
+def quick_sort(lst: List[int], l: int, h: int): # time O(NlogN) space O(N)
     if l < h:
         pivot = lst[h]
         i = l - 1
