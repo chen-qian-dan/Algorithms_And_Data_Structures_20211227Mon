@@ -12,6 +12,8 @@ dsa = dict()
 dsa[0] =  ("10.2", "LeetCode 1 - Two sum")
 dsa[1] = ("10.5", "LeetCode 217 - Contains Duplicate")
 dsa[2] = ("10.7", "LeetCode 48 - Rotate Image")
+dsa[3] = ("40.373", "LeetCode 110 - Balanced Binary Tree")
+dsa[4] = ("40.374", "LeetCode 98 - Validate Binary Search Tree")
 
 
 algorithms = dict()
