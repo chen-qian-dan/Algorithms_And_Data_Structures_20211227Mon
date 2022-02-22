@@ -14,6 +14,8 @@ dsa[1] = ("10.5", "LeetCode 217 - Contains Duplicate")
 dsa[2] = ("10.7", "LeetCode 48 - Rotate Image")
 dsa[3] = ("40.373", "LeetCode 110 - Balanced Binary Tree")
 dsa[4] = ("40.374", "LeetCode 98 - Validate Binary Search Tree")
+dsa[5] = ("40.375", "LeetCode 285 - In-order Successor in BST")
+dsa[6] = ("40.377", "LeetCode 236 - Lowest Common Ancestor of a Binary Tree")
 
 
 algorithms = dict()
