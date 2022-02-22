@@ -37,6 +37,8 @@ class Graph:
     def DFS(self, vertex): # time O(v + e)  space O(v + e)
         if self.gdict is None:
             return "The graph does not exist"
+        if vertex not in self.gdict.keys():
+            return False 
         ret = list()
         visitedDict = Dict.fromkeys(self.gdict.keys(), False)
         stack = deque()
