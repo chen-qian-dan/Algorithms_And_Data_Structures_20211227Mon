@@ -26,5 +26,14 @@ def house_robber(houses: List[int]) -> int:
     return max(sub1, sub2)
 
 
+def house_robber_video(houses: List[int], curIndex: int):
+    if curIndex >= len(houses):
+        return 0 
+    sub1 = houses[curIndex] + house_robber_video(houses, curIndex + 2)
+    sub2 = house_robber_video(houses, curIndex + 1)
+    return max(sub1, sub2)
+
+
 houses = [6, 7, 1, 30, 8, 2, 4] # expect 41
 print(house_robber(houses))
+print(house_robber_video(houses, 0))
