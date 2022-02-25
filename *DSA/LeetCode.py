@@ -15,7 +15,7 @@ dsa[2] = ("10.7", "LeetCode 48 - Rotate Image")
 dsa[3] = ("40.373", "LeetCode 110 - Balanced Binary Tree")
 dsa[4] = ("40.374", "LeetCode 98 - Validate Binary Search Tree")
 dsa[5] = ("40.375", "LeetCode 285 - In-order Successor in BST")
-dsa[6] = ("40.377", "LeetCode 236 - Lowest Common Ancestor of a Binary Tree")
+dsa[6] = ("40.377", "LeetCode 236 - Lowest Common Ancestor of a Binary Tree") # not finish yet 
 
 
 algorithms = dict()
@@ -48,5 +48,9 @@ algorithms[25] = (141, "LeetCode 23", "Merge K Sorted Lists")  # not finished ye
 algorithms[26] = (143, "LeetCode 78", "Subsets")
 algorithms[27] = (145, "LeetCode 17", "Letter Combinations of a Phone Number")
 algorithms[28] = (147, "LeetCode 79", "Word Search")
+
+
+google = dict()
+google[0] = (150, "Evaluate Reverse Polish Notation") # use stack
 
 
