@@ -10,7 +10,7 @@ def house_robber_top_down(houses, index, dp):
 
 
 def house_robber_bottom_up(houses):
-    tb = [0] * len(houses)
+    tb = [0] * len(houses) # or do tb = [0] * (len(houses)+2)
     tb[-1] = houses[-1]
     tb[-2] = max(houses[-1], houses[-2])
     for i in range(len(houses)-3, -1, -1):
