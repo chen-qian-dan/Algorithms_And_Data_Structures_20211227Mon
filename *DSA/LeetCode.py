@@ -52,5 +52,10 @@ algorithms[28] = (147, "LeetCode 79", "Word Search")
 
 google = dict()
 google[0] = (150, "Evaluate Reverse Polish Notation") # use stack
+google[1] = (299, "Bulls and Cows") # use hash, because only 10 digits, can use [0] * 10 too
+google[2] = (359, "Logger Rate Limiter")
+google[3] = (359, "Logger Rate Limiter")
+google[4] = (366, "Find Leaves of Binary Tree")
+
 
 
