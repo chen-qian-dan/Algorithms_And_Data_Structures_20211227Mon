@@ -34,4 +34,4 @@ def zero_one_snapsack(items, C, index: int) -> int:
 lst = [(3, 31), (1, 26), (2, 17), (5, 72)]
 C = 7
 
-print(zero_one_snapsack(lst, C, 0))
+print(zero_one_snapsack(lst, C, 0)) # expect 98
