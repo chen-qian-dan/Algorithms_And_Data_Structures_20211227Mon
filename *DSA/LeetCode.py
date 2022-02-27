@@ -47,15 +47,21 @@ algorithms[24] = (138, "LeetCode 328", "Odd Even Linked List")
 algorithms[25] = (141, "LeetCode 23", "Merge K Sorted Lists")  # not finished yet
 algorithms[26] = (143, "LeetCode 78", "Subsets")
 algorithms[27] = (145, "LeetCode 17", "Letter Combinations of a Phone Number")
-algorithms[28] = (147, "LeetCode 79", "Word Search")
+algorithms[28] = (147, "LeetCode 79", "Word Search") # not finished yet 
+algorithms[29] = (194, "LeetCode 236", "Lowest Common Ancestor of a Binary Tree") # ?
+algorithms[30] = (214, "LeetCode 198", "House Robber") # divide and conqer, dynamic 
+
 
 
 google = dict()
 google[0] = (150, "Evaluate Reverse Polish Notation") # use stack
 google[1] = (299, "Bulls and Cows") # use hash, because only 10 digits, can use [0] * 10 too
 google[2] = (359, "Logger Rate Limiter")
-google[3] = (359, "Logger Rate Limiter")
-google[4] = (366, "Find Leaves of Binary Tree")
+google[3] = (366, "Find Leaves of Binary Tree")
+google[4] = (384, "Shuffle an Array") # Fisher-Yates algorithm 
+google[5] = (394, "Decode String") # use stack, be careful about the order appending str, 
+# ppl complain it should be hard, but i solved it easily. 2022-02-27Sun 00:00:30
+
 
 
 
