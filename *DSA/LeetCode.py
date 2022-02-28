@@ -61,6 +61,13 @@ google[3] = (366, "Find Leaves of Binary Tree")
 google[4] = (384, "Shuffle an Array") # Fisher-Yates algorithm 
 google[5] = (394, "Decode String") # use stack, be careful about the order appending str, 
 # ppl complain it should be hard, but i solved it easily. 2022-02-27Sun 00:00:30
+google[6] = (418, "Sentence Screen Fitting")
+google[7] = (528, "Random Pick with Weight")
+google[8] = (539, "Minimum Time Difference")
+google[9] = (593, "Valid Square")
+google[10] = (652, "Find Duplicate Subtrees") # hash all nodes
+google[11] = (690, "Employee Importance")
+google[12] = (777, "Swap Adjacent in LR String")
 
 
 
