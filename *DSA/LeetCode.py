@@ -68,6 +68,9 @@ google[9] = (593, "Valid Square")
 google[10] = (652, "Find Duplicate Subtrees") # hash all nodes
 google[11] = (690, "Employee Importance")
 google[12] = (777, "Swap Adjacent in LR String")
+google[13] = (792, "Number of Matching Subsequences")
+google[14] = (794, "Valid Tic-Tac-Toe State")
+google[15] = (833, "Find And Replace in String")
 
 
 
