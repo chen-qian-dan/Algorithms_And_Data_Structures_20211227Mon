@@ -71,7 +71,10 @@ google[12] = (777, "Swap Adjacent in LR String")
 google[13] = (792, "Number of Matching Subsequences")
 google[14] = (794, "Valid Tic-Tac-Toe State")
 google[15] = (833, "Find And Replace in String")
-
+google[16] = (900, "RLE Iterator")
+google[17] = (939, "Minimum Area Rectangle")
+google[18] = (954, "Array of Doubled Pairs")
+google[19] = (990, "Satisfiability of Equality Equations")
 
 
 
