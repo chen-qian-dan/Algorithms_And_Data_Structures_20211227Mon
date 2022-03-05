@@ -10,34 +10,26 @@ from Data import Data
 
 def execuate(input_csv: str, sma1_window: int, sma2_window: int, output_csv: str):
 
-    # output_path = os.path.join(parent_path, output_csv) 
-    # if not os.path.exists(output_path):
-    #     os.makedirs(output_path)
-
-    oData1 = Data(os.path.join(parent_path, input_csv), sma1_window)
-    oData2 = Data(os.path.join(parent_path, input_csv), sma2_window)
+    oData1 = Data(input_csv, sma1_window)
+    oData2 = Data(input_csv, sma2_window)
 
     df = pd.DataFrame(columns = [OutputFields.Date, OutputFields.ClosePrice, OutputFields.Sma1, OutputFields.Sma2, OutputFields.Position])
    
 
     for v1, v2 in zip(oData1.gen, oData2.gen):
         signal = 0 
+        
         if v1[2] and v2[2]:
-            if v1[2] > v2[2]:
+            arg1 = round(v1[2], 3)
+            arg2 = round(v2[2], 3)
+            if arg1 > arg2:
                 signal = 1
-            elif v1[2] < v2[2]:
+            elif arg1 < arg2:
                 signal = -1
 
-        df.loc[len(df)] = [v1[0], v1[1], v1[2], v2[2], signal]
+        df.loc[len(df)] = [v1[0], v1[1], arg1, arg2, signal]
 
-    df.to_csv(output_csv, index = False )
-    
-    print(input_csv)
-
-
-
-# def trade(input_csv: str, sma1_window: int, sma2_window: int, output_csv: str):
-#     execuate(input_csv: str, sma1_window: int, sma2_window: int, output_csv: str)
+    df.to_csv(output_csv, index = False)
 
 
 
