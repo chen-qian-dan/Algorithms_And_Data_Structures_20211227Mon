@@ -1,8 +1,8 @@
-"""
-ReadMe:
-run on terminal : % ./run.sh "Input/close_prices.csv" 3 9 "output.csv"
 
-"""
+# ReadMe:
+# run on terminal : % ./run.sh "Input/close_prices.csv" 3 9 "output.csv"
+
+
 
 
 #!/bin/sh
