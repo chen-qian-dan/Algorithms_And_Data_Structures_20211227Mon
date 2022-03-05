@@ -4,13 +4,11 @@ import sys
 import pathlib
 import pandas as pd
 from collections import deque 
-from dataclasses import dataclass
+from Constants import OutputFields, InputFields
  
 
 
 def execuate(input_csv: str, sma1_window: int, sma2_window: int, output_csv: str):
-
-    parent_path = pathlib.Path(__file__).parent.absolute()
 
     # output_path = os.path.join(parent_path, output_csv) 
     # if not os.path.exists(output_path):
@@ -82,23 +80,10 @@ class Data:
 
             
 
-@dataclass
-class InputFields:
-    Date: str = 'date'
-    ClosePrice: str = 'close'
 
 
-
-@dataclass
-class OutputFields:
-    Date: str = 'date'
-    ClosePrice: str = 'close'
-    Sma1: str = 'sma1'
-    Sma2: str = 'sma2'
-    Position: str = 'position'
-
-
-input_csv: str = './Input/close_prices.csv'
+parent_path = pathlib.Path(__file__).parent.absolute()
+input_csv: str = os.path.join(parent_path, '../Input/close_prices.csv') 
 sma1_window: int = 3
 sma2_window: int = 9 
 output_csv: str = 'output.csv'
