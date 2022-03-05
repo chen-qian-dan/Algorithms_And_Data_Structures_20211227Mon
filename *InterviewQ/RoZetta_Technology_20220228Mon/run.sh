@@ -1,6 +1,6 @@
 """
 ReadMe:
-run on terminal : % ./run.sh "/Input/close_prices.csv" 3 9 "output.csv"
+run on terminal : % ./run.sh "Input/close_prices.csv" 3 9 "output.csv"
 
 """
 
