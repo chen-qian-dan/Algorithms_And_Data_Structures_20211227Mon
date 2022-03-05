@@ -1,13 +1,10 @@
 #!/bin/sh
 import os
-import sys 
 import pathlib
 import pandas as pd
 from collections import deque 
 from dataclasses import dataclass
  
-
-
 
 
 def execuate(input_csv: str, sma1_window: int, sma2_window: int, output_csv: str):
@@ -17,13 +14,21 @@ def execuate(input_csv: str, sma1_window: int, sma2_window: int, output_csv: str
     oData1 = Data(os.path.join(parent_path, input_csv), sma1_window)
     oData2 = Data(os.path.join(parent_path, input_csv), sma2_window)
 
-    dp = dict()
-    for v in OutputFields:
-        dp.setdefault(v, [])
+    df = pd.DataFrame(columns = [OutputFields.Date, OutputFields.ClosePrice, OutputFields.Sma1, OutputFields.Sma2, OutputFields.Position])
+   
 
     for v1, v2 in zip(oData1.gen, oData2.gen):
-        print(v1)
+        signal = 0 
+        if v1[2] and v2[2]:
+            if v1[2] > v2[2]:
+                signal = 1
+            elif v1[2] < v2[2]:
+                signal = -1
 
+        df.loc[len(df)] = [v1[0], v1[1], v1[2], v2[2], signal]
+
+    df.to_csv("output.csv", index = False )
+    
     print(input_csv)
 
 
@@ -52,7 +57,7 @@ class Data:
         avg_old = None 
         status = None 
         for i in range(df.shape[0]):
-            q.append(df[InputFields.Date][i])
+            q.append(df[InputFields.ClosePrice][i])
   
             if len(q) == self.windowSize:
                 avg = sum(list(q)) / self.windowSize 
