@@ -42,6 +42,12 @@ class Test_init(unittest.TestCase):
                         sma2_window = 0,  # <--- should > 0
                         output_csv = "")
 
+        with self.assertRaises(ValueError):
+             _ = Trader(input_csv = "",  
+                        sma1_window = 9,  
+                        sma2_window = 3,  # <--- sma1_window < sma2_window must be True
+                        output_csv = "")
+
 
 
 

@@ -19,7 +19,7 @@ class Trader:
         if sma1_window <= 0:
             raise ValueError("sma1_window > 0 must be True")
         if sma2_window <= 0:
-            raise TypeError("sma2_window > 0  must be True")
+            raise ValueError("sma2_window > 0  must be True")
         
         if sma1_window >= sma2_window:
             raise ValueError(f"sma1_window({sma1_window}) < sma2_window({sma2_window}) must be True")
