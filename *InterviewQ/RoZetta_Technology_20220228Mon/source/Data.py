@@ -4,19 +4,24 @@ from Constants import InputFields
 
 class Data:
     def __init__(self, path: str, windowSize: int):
+        if not isinstance(path, str):
+            raise TypeError("path must be string")
+        if not isinstance(windowSize, int):
+            raise TypeError("windowSize must be int type")
+        
+        if windowSize <= 0:
+            raise ValueError("windowSize > 0 must be True")
+            
         self.path = path
         self.windowSize = windowSize
         self.gen = self.generator()
        
-    
-
 
     def generator(self):
         """
         sliding window to calculate the average 
         """
         df = pd.read_csv(self.path)
-        print(self.path)
         q = deque()
         avg = None 
         avg_old = None 
