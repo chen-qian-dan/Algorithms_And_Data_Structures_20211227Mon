@@ -9,6 +9,11 @@ class Test_init(unittest.TestCase):
         with self.assertRaises(TypeError):
             _ = Data(path = "", windowSize = 9.9) # <------ windowSize should be int
 
+    
+    def test_arg_value(self):
+        with self.assertRaises(ValueError):
+            _ = Data(path = "", windowSize = 0) # <------ windowSize should > 0
+
 
 
 
