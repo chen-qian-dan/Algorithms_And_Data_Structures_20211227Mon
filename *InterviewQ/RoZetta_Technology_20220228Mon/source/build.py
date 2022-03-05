@@ -94,5 +94,7 @@ output_csv: str = 'output.csv'
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         execuate(input_csv, sma1_window, sma2_window, output_csv)
-    else:
+    elif len(sys.argv) == 5:
         execuate(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), sys.argv[4])
+    else:
+        print("The arguments are wrong: either give zero arguments or 4 arguments: <absolute path of input_csv>, sma1_window, sma2_window <absolute path of output_csv>")
