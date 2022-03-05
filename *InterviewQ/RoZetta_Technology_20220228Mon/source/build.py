@@ -1,5 +1,6 @@
 #!/bin/sh
 import os
+import sys 
 import pathlib
 import pandas as pd
 from collections import deque 
@@ -10,6 +11,10 @@ from dataclasses import dataclass
 def execuate(input_csv: str, sma1_window: int, sma2_window: int, output_csv: str):
 
     parent_path = pathlib.Path(__file__).parent.absolute()
+
+    # output_path = os.path.join(parent_path, output_csv) 
+    # if not os.path.exists(output_path):
+    #     os.makedirs(output_path)
 
     oData1 = Data(os.path.join(parent_path, input_csv), sma1_window)
     oData2 = Data(os.path.join(parent_path, input_csv), sma2_window)
@@ -27,7 +32,7 @@ def execuate(input_csv: str, sma1_window: int, sma2_window: int, output_csv: str
 
         df.loc[len(df)] = [v1[0], v1[1], v1[2], v2[2], signal]
 
-    df.to_csv("output.csv", index = False )
+    df.to_csv(output_csv, index = False )
     
     print(input_csv)
 
@@ -42,8 +47,7 @@ class Data:
         self.path = path
         self.windowSize = windowSize
         self.gen = self.generator()
-        # for a in self.gen:
-        #     print(a)
+       
     
 
 
@@ -52,6 +56,7 @@ class Data:
         sliding window to calculate the average 
         """
         df = pd.read_csv(self.path)
+        print(self.path)
         q = deque()
         avg = None 
         avg_old = None 
@@ -96,10 +101,13 @@ class OutputFields:
 input_csv: str = './Input/close_prices.csv'
 sma1_window: int = 3
 sma2_window: int = 9 
-output_csv: str = './Output/output.csv'
-
-execuate(input_csv, sma1_window, sma2_window, output_csv)
+output_csv: str = 'output.csv'
 
 
-# if __name__ == '__main__':
-#     execuate(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+
+
+if __name__ == '__main__':
+    if len(sys.argv) == 1:
+        execuate(input_csv, sma1_window, sma2_window, output_csv)
+    else:
+        execuate(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), sys.argv[4])
