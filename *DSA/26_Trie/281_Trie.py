@@ -32,6 +32,35 @@ class Trie:
             return True 
         return False 
 
+def deleteString(root, word, index):
+    ch = word[index] 
+    cur = root.children.get(ch)
+
+    if index == len(word) - 1:
+        if len(cur.children) > 0:
+            cur.endOfString = False 
+            return False 
+        else:
+            root.children.pop(ch)
+            return True 
+
+    if len(cur.children) > 1:
+        deleteString(cur, word, index + 1)
+        return False 
+
+    if cur.endOfString is True:
+        deleteString(cur, word, index + 1)
+        return False 
+
+    bCanBeDeleted = deleteString(cur, word, index + 1)
+    if bCanBeDeleted:
+        root.children.pop(ch)
+        return True 
+    else:
+        return False 
+
+
+
 
 trie = Trie() # create Trie : time O(1), space O(1)
 
@@ -43,7 +72,7 @@ trie = Trie() # create Trie : time O(1), space O(1)
 """
 trie.insertString("App")
 trie.insertString("Appi")
-
+deleteString(trie.root, "Appi", 0)
 
 # search a string in trie 
 
