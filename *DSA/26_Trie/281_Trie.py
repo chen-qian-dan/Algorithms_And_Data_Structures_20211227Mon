@@ -22,6 +22,16 @@ class Trie:
             cur = cur.children[c]
         cur.endOfString = True 
 
+    def search(self, word): # time O(m) space O(1) m is the len of word 
+        cur = self.root 
+        for c in word:
+            if not c in cur.children:
+                return False 
+            cur = cur.children[c]
+        if cur.endOfString:
+            return True 
+        return False 
+
 
 trie = Trie() # create Trie : time O(1), space O(1)
 
@@ -33,3 +43,8 @@ trie = Trie() # create Trie : time O(1), space O(1)
 """
 trie.insertString("App")
 trie.insertString("Appi")
+
+
+# search a string in trie 
+
+print(trie.search("Appi"))
