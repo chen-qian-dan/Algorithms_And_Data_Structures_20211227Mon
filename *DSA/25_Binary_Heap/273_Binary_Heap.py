@@ -22,9 +22,23 @@ def sizeOfHeap(root):
     else:
         return root.heapSize
 
+
+# traversal time O(n), space O(n)
+# pre-order, in-order, post-order, level order 
+def levelOrderTraversal(root):
+    if not root:
+        return None 
+    else:
+        ret = list()
+        for i in range(1, root.heapSize + 1):
+            ret.append(root.lst[i])
+        return ret 
+
+
 # Creation : time O(1), space O(N)
 heap = Heap(5)
 print(sizeOfHeap(heap))
 print(peak(heap))
+print(levelOrderTraversal(heap))
 
 
