@@ -105,6 +105,13 @@ def extractNode(root, heapType): # time O(logN), space O(logN)
 
 
 
+# delete the entire heap 
+def deleteEntireHeap(root): # time O(1) space O(1)
+    root.lst = None 
+    
+
+
+
 
 
 
