@@ -34,11 +34,42 @@ def levelOrderTraversal(root):
             ret.append(root.lst[i])
         return ret 
 
+# insert a node to binary heap 
+# insert at the end of the list
+# loop the list from the end to the begining, swap value if it is not smaller than its parent
+def heapify(root, index: int, heapType): # time O(logN), space O(logN)
+    parentIndex = index // 2
+    if index <= 1:
+        return None 
+    if heapType == "Min":
+        if root.lst[index] < root.lst[parentIndex]:
+            root.lst[index], root.lst[parentIndex] = root.lst[parentIndex], root.lst[index]
+            heapify(root, parentIndex, heapType)
+    if heapType == "Max":
+        if root.lst[index] > root.lst[parentIndex]:
+            root.lst[index], root.lst[parentIndex] = root.lst[parentIndex], root.lst[index]
+            heapify(root, parentIndex, heapType)
+
+def insertNode(root, value, heapType): # time O(logN), space O(logN)
+    if root.heapSize + 1 == root.maxSize:
+        return "The binary heap is full"
+    root.lst[root.heapSize + 1] = value 
+    root.heapSize += 1
+    heapify(root, root.heapSize, heapType)
+    return "The value has been successfully inserted"
+
 
 # Creation : time O(1), space O(N)
 heap = Heap(5)
 print(sizeOfHeap(heap))
 print(peak(heap))
 print(levelOrderTraversal(heap))
+insertNode(heap, 2, "Max")
+insertNode(heap, 5, "Max")
+insertNode(heap, 4, "Max")
+insertNode(heap, 1, "Max")
+print(levelOrderTraversal(heap))
+
+
 
 
