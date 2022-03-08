@@ -75,6 +75,7 @@ google[16] = (900, "RLE Iterator")
 google[17] = (939, "Minimum Area Rectangle")
 google[18] = (954, "Array of Doubled Pairs")
 google[19] = (990, "Satisfiability of Equality Equations")
+google[20] = (1048, "Longest String Chain")
 
 
 
